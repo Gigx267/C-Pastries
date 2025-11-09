@@ -22,7 +22,7 @@
     <style>
         /* ===== CSS VARIABLES ===== */
         :root {
-            --primary-gold: #f8a9e7;
+            --primary-gold: #f9a392;
             --primary-dark: #2c2c2c;
             --accent-gold: #c19b2e;
             --light-cream: #f8f5f2;
@@ -195,7 +195,7 @@
 
         /* ===== HERO SECTION ===== */
         .about-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./bg2.webp) center center no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./bg.webp) center center no-repeat;
             background-size: cover;
             background-attachment: fixed;
             min-height: 60vh;
@@ -511,36 +511,29 @@
             </div>
         </div>
     </div>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-        <div class="container">
-            <a href="index.html" class="navbar-brand">
-                <img src="logo.jpg" alt="C Pastries Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about.html" class="nav-link active">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="menu.html" class="nav-link">View Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link">Contact Us</a>
-                    </li>
-                </ul>
-                <a href="order.html" class="btn btn-pastry ml-lg-3 mt-3 mt-lg-0">Order Now</a>
+  <div class="container-fluid p-0">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
+        <a href="index.html" class="navbar-brand ml-lg-3 d-flex align-items-center">
+            <img style="height: 2cm; border-radius: 50%; opacity: 80%;" src="logo.jpg" alt="Bakery Logo" srcset="">
+            <span style="font-size: 1.5rem; font-weight: bold; color: #f9a392; margin-left: 0.5rem; line-height: 1;">
+                C Pastries
+            </span>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+            <div class="navbar-nav m-auto py-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="menu.html" class="nav-item nav-link"> View Menu</a>
+                
+                <a href="contact.html" class="nav-item nav-link">Contact Us </a>
             </div>
+            <a href="order.html" class="btn btn-primary d-none d-lg-block">Order Now</a>
         </div>
     </nav>
-
+</div>
     <!-- Hero Section -->
     <div class="about-hero">
         <div class="container">
