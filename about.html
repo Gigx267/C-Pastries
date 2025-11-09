@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>About Us - C Pastries: Authentic African Luxury</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Our story, mission, and dedication to crafting premium, authentic Nigerian and African smallchops in Toronto." name="description">
+    <meta name="keywords" content="Nigerian pastries, African smallchops, Toronto bakery, authentic African food, Nigerian snacks">
+
+    <link href="logo.jpg" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --primary-gold: #f8a9e7;
+            --primary-dark: #2c2c2c;
+            --accent-gold: #c19b2e;
+            --light-cream: #f8f5f2;
+            --medium-cream: #f5f1eb;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-muted: #6c757d;
+            --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-gold: 0 8px 25px rgba(212, 175, 55, 0.2);
+            --transition: all 0.3s ease;
+            --border-radius: 10px;
+        }
+
+        /* ===== GLOBAL STYLES ===== */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-dark);
+        }
+
+        .pastry-primary {
+            color: var(--primary-gold);
+        }
+
+        .bg-pastry-primary {
+            background-color: var(--primary-gold);
+        }
+
+        .border-pastry-primary {
+            border-color: var(--primary-gold) !important;
+        }
+
+        .pastry-bg {
+            background-color: var(--light-cream);
+        }
+
+        .btn-pastry {
+            background-color: var(--primary-gold);
+            border-color: var(--primary-gold);
+            color: var(--primary-dark);
+            font-weight: 500;
+            padding: 12px 30px;
+            border-radius: 30px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-pastry:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: all 0.6s;
+            z-index: -1;
+        }
+
+        .btn-pastry:hover {
+            background-color: var(--accent-gold);
+            border-color: var(--accent-gold);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-pastry:hover:before {
+            left: 100%;
+        }
+
+        .pastry-section-title {
+            position: relative;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+        }
+
+        .pastry-section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-gold);
+        }
+
+        .pastry-section-title.text-center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar a {
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover {
+            color: var(--primary-gold);
+        }
+
+        .navbar {
+            padding: 15px 0;
+            transition: var(--transition);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: var(--white) !important;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand img {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            padding: 10px 15px !important;
+            margin: 0 5px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .navbar-nav .nav-link:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--primary-gold) !important;
+        }
+
+        .navbar-nav .nav-link:hover:before,
+        .navbar-nav .nav-link.active:before {
+            width: 100%;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./bg3.webp) center center no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            position: relative;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb-nav {
+            font-size: 1rem;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .breadcrumb-nav a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* ===== STORY SECTION ===== */
+        .story-section {
+            background-color: var(--white);
+            position: relative;
+        }
+
+        .story-img-container {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            position: relative;
+        }
+
+        .story-img-container:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.1) 100%);
+            z-index: 1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .story-img-container:hover:before {
+            opacity: 1;
+        }
+
+        .story-img-container img {
+            transition: transform 0.8s ease;
+            width: 100%;
+        }
+
+        .story-img-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .story-tag {
+            display: inline-block;
+            background-color: rgba(212, 175, 55, 0.1);
+            color: var(--primary-gold);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .story-content {
+            padding: 30px;
+            border-radius: var(--border-radius);
+            background-color: var(--medium-cream);
+            box-shadow: var(--shadow-light);
+        }
+
+        /* ===== VALUES SECTION ===== */
+        .values-section {
+            background-color: var(--light-cream);
+            position: relative;
+        }
+
+        .value-card {
+            background: var(--white);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--primary-gold);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            box-shadow: var(--shadow-gold);
+            transform: translateY(-10px);
+        }
+
+        .value-card:hover:before {
+            transform: scaleX(1);
+        }
+
+        .value-card i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .value-card:hover i {
+            transform: scale(1.1);
+        }
+
+        .value-card h5 {
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            position: relative;
+        }
+
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--primary-gold);
+        }
+
+        .footer h5 {
+            color: var(--white);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer h5:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-gold);
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.7);
+            transition: var(--transition);
+        }
+
+        .footer a:hover {
+            color: var(--primary-gold);
+            text-decoration: none;
+        }
+
+        .footer .btn-social {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255,255,255,0.1);
+            transition: var(--transition);
+        }
+
+        .footer .btn-social:hover {
+            background-color: var(--primary-gold);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            background-color: rgba(0,0,0,0.2);
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-gold);
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--accent-gold);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 991.98px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 8px 0 !important;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-padding {
+                padding: 40px 0;
+            }
+            
+            .value-card {
+                margin-bottom: 30px;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar d-none d-lg-block">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="d-inline-flex align-items-center">
+                        <small><i class="fa fa-phone-alt mr-2"></i>+1 (289) 273-4930</small>
+                        <small class="px-3">|</small>
+                        <small><i class="fa fa-envelope mr-2"></i>cspastries3@gmail.com</small>
+                    </div>
+                </div>
+                <div class="col-md-6 text-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="px-2" href="https://www.instagram.com/cpastriess/">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="px-2" href="https://www.instagram.com/cpastriess/">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="px-2" href="https://www.instagram.com/cpastriess/">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="logo.jpg" alt="C Pastries Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link active">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="menu.html" class="nav-link">View Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+                <a href="order.html" class="btn btn-pastry ml-lg-3 mt-3 mt-lg-0">Order Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="about-hero">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 style="color: #fbf9fb;" class="animate-fade-in-up">NO 1  SmallChops Vendor</h1>
+                    <div class="breadcrumb-nav animate-fade-in-up" style="animation-delay: 0.2s">
+                        <a href="index.html">Home</a> / <span class="pastry-primary">About Us</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Story Section -->
+    <section class="story-section section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="story-img-container">
+                        <img class="img-fluid" src="cp (6).jpg" alt="A photo representing the C Pastries story and heritage">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <span class="story-tag">Tradition Meets Excellence</span>
+                    <h2 class="pastry-section-title">A Taste of Heritage, Crafted in Toronto</h2>
+                    <p class="mb-4 text-muted">
+                        C Pastries began with a simple, heartfelt mission: to share the rich,
+                         vibrant flavors of authentic Nigerian smallchops with the Greater Toronto Area.
+                          Far from being just snacks, our pastries are a celebration of culture, family recipes,
+                           and the joy of shared moments.
+                    </p>
+                    <div class="story-content mb-4">
+                        <p class="mb-0">
+                            Every single item, from the perfectly spiced Meat Pie to the airy,
+                             golden Puff Puff, is a testament to quality. 
+                            We adhere strictly to traditional techniques while selecting only the finest,
+                             freshest ingredients. This dedication ensures an unparalleled, 
+                             luxurious tasting experience that honors our heritage.
+                        </p>
+                    </div>
+                    <a href="menu.html" class="btn btn-pastry">View Our Menu <i class="fa fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <span class="story-tag">Our Promise</span>
+                    <h2 class="pastry-section-title text-center">Crafting Joy, One Pastry at a Time</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="value-card">
+                        <i class="fa fa-cookie-bite"></i>
+                        <h5>Authenticity</h5>
+                        <p class="text-muted m-0">
+                            We use cherished, time-honored African recipes to bring you genuine, unforgettable flavors.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="value-card">
+                        <i class="fa fa-gem"></i>
+                        <h5>Premium Quality</h5>
+                        <p class="text-muted m-0">
+                            Only the finest ingredients make it into our kitchen, ensuring a consistently superior product.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="value-card">
+                        <i class="fa fa-heartbeat"></i>
+                        <h5>Passion & Care</h5>
+                        <p class="text-muted m-0">
+                            Each pastry is baked with immense love and meticulous attention to detail by our expert team.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container section-padding">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <a href="index.html" class="d-inline-block mb-4">
+                        <h2 class="text-white">C Pastries</h2>
+                    </a>
+                    <p class="mb-4">
+                        Our goal is to help you experience authentic African flavors that reflect traditional recipes and premium ingredients. 
+                        We offer a wide range of pastries and smallchops, and our bakers stay true to traditional techniques while providing 
+                        you with top-notch service in a warm and inviting atmosphere.
+                    </p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt mr-2"></i>60 Honeycrisp Crescent, Vaughan, ON L4K 0N5</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt mr-2"></i>+1 (289) 273-4930</p>
+                    <p class="mb-4"><i class="fa fa-envelope mr-2"></i>cspastries3@gmail.com</p>
+                    <div class="d-flex">
+                        <a class="btn-social mr-2" href="https://www.instagram.com/cpastriess/"><i class="fab fa-twitter"></i></a>
+                        <a class="btn-social mr-2" href="https://www.instagram.com/cpastriess/"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn-social" href="https://www.instagram.com/cpastriess/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-sm-6 mb-5">
+                            <h5>Quick Links</h5>
+                            <div class="d-flex flex-column">
+                                <a class="mb-2" href="index.html">Home</a>
+                                <a class="mb-2" href="about.html">About</a>
+                                <a class="mb-2" href="menu.html">Menu</a>
+                                <a class="mb-2" href="order.html">Place Order</a>
+                                <a href="contact.html">Contact</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <h5>Business Hours</h5>
+                            <div class="d-flex flex-column">
+                                <p class="mb-1">Monday - Saturday</p>
+                                <p class="mb-3 font-weight-bold">10:00 AM - 7:00 PM</p>
+                                <p class="mb-1">Sunday</p>
+                                <p class="font-weight-bold">12:00 PM - 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-left">
+                        <p class="mb-0">&copy; <a href="index.html">C Pastries</a>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-right">
+                        <p class="mb-0">Place an <a href="order.html">order</a> today!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Navbar scroll effect
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('.navbar').addClass('scrolled');
+            } else {
+                $('.navbar').removeClass('scrolled');
+            }
+        });
+        
+        // Back to top button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 300) {
+                $('.back-to-top').addClass('show');
+            } else {
+                $('.back-to-top').removeClass('show');
+            }
+        });
+        
+        $('.back-to-top').click(function() {
+            $('html, body').animate({scrollTop: 0}, 800);
+            return false;
+        });
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            $('.animate-fade-in-up').each(function() {
+                var position = $(this).offset().top;
+                var scrollPosition = $(window).scrollTop() + $(window).height() * 0.8;
+                
+                if (position < scrollPosition) {
+                    $(this).addClass('animate-fade-in-up');
+                }
+            });
+        }
+        
+        $(window).scroll(function() {
+            animateOnScroll();
+        });
+        
+        // Initialize on page load
+        $(document).ready(function() {
+            animateOnScroll();
+        });
+    </script>
+</body>
+
+</html>
