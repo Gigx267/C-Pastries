@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Menu - C Pastries: Authentic African Luxury</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Explore our premium selection of authentic Nigerian pastries and smallchops. Meat pies, puff puff, samosas, and more." name="description">
+    <meta name="keywords" content="Nigerian pastries menu, African smallchops, Toronto bakery menu, Nigerian snacks prices">
+
+    <link href="logo.jpg" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <style>
+        /* ===== CSS VARIABLES - Vibrant, Authentic African Palette ===== */
+        :root {
+            --primary-gold: #f45911; /* Rich African gold */
+            --primary-red: #c41e3a; /* Vibrant red for accents */
+            --primary-dark: #1a1a1a; /* Deep black for text */
+            --accent-gold: #f1c40f; /* Bright gold for highlights */
+            --light-cream: #fef5e7; /* Warm cream background */
+            --medium-cream: #f5e6d3; /* Light brown for sections */
+            --white: #ffffff;
+            --text-dark: #2c2c2c;
+            --text-light: #f8f5f2;
+            --text-muted: #7a7a7a;
+            --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.15);
+            --shadow-gold: 0 4px 15px rgba(212, 175, 55, 0.4);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+
+        /* ===== GLOBAL STYLES - Bold & Vibrant ===== */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .pastry-primary {
+            color: var(--primary-gold);
+        }
+
+        .pastry-red {
+            color: var(--primary-red);
+        }
+
+        /* ===== BUTTONS - Bold & Eye-catching ===== */
+        .btn-pastry {
+            background-color: var(--primary-red);
+            border: 2px solid var(--primary-red);
+            color: var(--white);
+            font-weight: 700;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-pastry:hover {
+            background-color: transparent;
+            color: var(--primary-red);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-outline-pastry {
+            background-color: transparent;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+            font-weight: 700;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .btn-outline-pastry:hover {
+            background-color: var(--primary-gold);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* ===== HEADER & NAVIGATION - Simplified & Bold ===== */
+        .navbar {
+            padding: 15px 0;
+            transition: padding var(--transition), background-color var(--transition), box-shadow var(--transition);
+            box-shadow: none;
+            background-color: var(--white) !important;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(4px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .navbar-light .navbar-nav .nav-link {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            margin: 0 10px;
+        }
+        
+        .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link.active {
+            color: var(--primary-red);
+        }
+
+        /* ===== HERO SECTION - Bold & Appetizing ===== */
+        .menu-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./bg3.webp') center/cover no-repeat;
+            color: var(--white);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .menu-hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* ===== MENU SECTION - Vibrant & Appetizing ===== */
+        .menu-section {
+            background-color: var(--light-cream);
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-red);
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .menu-category {
+            margin-bottom: 80px;
+        }
+
+        .category-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-gold);
+            display: inline-block;
+        }
+
+        .menu-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            height: 100%;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .item-image-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .item-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-item:hover .item-image {
+            transform: scale(1.1);
+        }
+
+        .item-content {
+            padding: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .item-name {
+            font-size: 1.4rem;
+            margin-bottom: 0;
+            color: var(--primary-dark);
+            flex: 1;
+        }
+
+        .item-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin-left: 15px;
+        }
+
+        .item-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .item-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .option-tag {
+            background-color: var(--medium-cream);
+            color: var(--text-dark);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .special-item {
+            border: 3px solid var(--primary-gold);
+        }
+
+        .special-badge {
+            background-color: var(--primary-gold);
+            color: var(--primary-dark);
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            z-index: 3;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-gold);
+        }
+
+        /* ===== CTA SECTION - Bold & Urgent ===== */
+        .cta-section {
+            background: linear-gradient(rgba(212, 175, 55, 0.9), rgba(212, 175, 55, 0.9)), url('cta-bg.jpg') center/cover no-repeat;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 2.8rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .btn-pastry {
+            background-color: var(--primary-red);
+            border-color: var(--primary-red);
+        }
+
+        .cta-section .btn-pastry:hover {
+            background-color: transparent;
+            color: var(--primary-red);
+            border-color: var(--primary-red);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 60px 0 30px;
+        }
+
+        .footer h5 {
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer a {
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--primary-gold);
+            text-decoration: none;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-gold);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* ===== RESPONSIVE ADJUSTMENTS ===== */
+        @media (max-width: 768px) {
+            .menu-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .category-title {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-light .navbar-nav .nav-link {
+                font-size: 1rem;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img   style="height: 60px;border-radius: 50%;" src="logo.jpg" alt="C Pastries Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="menu.html" class="nav-link active">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <a href="order.html" class="btn btn-pastry ml-lg-3 mt-3 mt-lg-0">Order Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="menu-hero">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1>Authentic African Pastries</h1>
+                    <p>Handcrafted with traditional recipes and premium ingredients. Experience the rich flavors of Nigeria right here in Toronto.</p>
+                    <a href="#menu" class="btn btn-outline-pastry btn-lg">View Our Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Menu</h2>
+                <p>Discover our premium selection of authentic Nigerian pastries and smallchops</p>
+            </div>
+
+          
+
+            <!-- Savory Pastries -->
+            <div class="menu-category">
+                <h3 class="category-title">Savory Pastries 🥟</h3>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="bg3.webp" alt="Meat Pie" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Meat Pie</h4>
+                                    <div class="item-price">$3.00</div>
+                                </div>
+                                <p class="item-description">Flaky pastry filled with seasoned ground beef and vegetables.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">2 for $6.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="bvv (1).jpg" alt="Chicken Pie" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Chicken Pie</h4>
+                                    <div class="item-price">$3.60</div>
+                                </div>
+                                <p class="item-description">Tender chicken pieces in a savory sauce, encased in buttery pastry.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">2 for $7.20</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="BH.webp" alt="Sausage Roll" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Sausage Roll</h4>
+                                    <div class="item-price">$3.00</div>
+                                </div>
+                                <p class="item-description">Juicy sausage wrapped in golden, flaky pastry.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">2 for $6.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="SP.jpg" alt="Spring Rolls" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Spring Rolls</h4>
+                                    <div class="item-price">$2.75</div>
+                                </div>
+                                <p class="item-description">Crispy rolls filled with seasoned vegetables and meat.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">2 for $5.50</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="gg (8).jpg" alt="Samosa" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Samosa</h4>
+                                    <div class="item-price">$3.25</div>
+                                </div>
+                                <p class="item-description">Triangular pastry filled with spiced potatoes, peas, and meat.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">2 for $6.50</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specialty Items -->
+            <div class="menu-category">
+                <h3 class="category-title">Specialty Items ✨</h3>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="cp (1).jpg" alt="Egg Roll" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Egg Roll</h4>
+                                    <div class="item-price">$3.00</div>
+                                </div>
+                                <p class="item-description">Hard-boiled egg wrapped in seasoned dough and deep-fried to perfection.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">2 for $5.50</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="cp (10).jpg" alt="Scotch Eggs" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Scotch Eggs</h4>
+                                    <div class="item-price">$4.00</div>
+                                </div>
+                                <p class="item-description">Boiled eggs wrapped in seasoned meat and breadcrumbs, then fried.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">2 for $7.50</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="cp (5).jpg" alt="Suya Wings" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Suya Wings</h4>
+                                    <div class="item-price">$7.50</div>
+                                </div>
+                                <p class="item-description">Chicken wings seasoned with traditional Nigerian suya spice.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">5 pieces</span>
+                                    <span class="option-tag">10 for $15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sweet Treats -->
+            <div class="menu-category">
+                <h3 class="category-title">Sweet Treats 🍩</h3>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="cp (7).jpg" alt="Doughnut" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Doughnut</h4>
+                                    <div class="item-price">$7.50</div>
+                                </div>
+                                <p class="item-description">Soft, fluffy doughnuts with your choice of topping.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">2 pieces</span>
+                                    <span class="option-tag">Sugar</span>
+                                    <span class="option-tag">Jam</span>
+                                    <span class="option-tag">Milky</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="cp (3).jpg" alt="Puff Puff" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Puff Puff</h4>
+                                    <div class="item-price">$7.00</div>
+                                </div>
+                                <p class="item-description">Classic Nigerian fried dough balls, light and sweet.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">8 pieces</span>
+                                    <span class="option-tag">12 for $10</span>
+                                    <span class="option-tag">20 for $18</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  <!-- Special Packages -->
+            <div class="menu-category">
+                <h3 class="category-title">Special Packages 🎁</h3>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="menu-item special-item">
+                            <span class="special-badge">Best Value</span>
+                            <div class="item-image-container">
+                                <img src="gg (3).jpg" alt="Smallchop Pack" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Smallchop Pack</h4>
+                                    <div class="item-price">$17.00</div>
+                                </div>
+                                <p class="item-description">The perfect assortment for sampling our most popular items. Great for a snack or sharing!</p>
+                                <div class="item-options">
+                                    <span class="option-tag">2 Samosas</span>
+                                    <span class="option-tag">2 Spring Rolls</span>
+                                    <span class="option-tag">5 Puff Puff</span>
+                                    <span class="option-tag">2 Suya Wings</span>
+                                    <span class="option-tag">1 Meat Pie</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2>Ready to Taste Authentic African Luxury?</h2>
+                    <p>Place your order now and experience the rich flavors of Nigeria right here in Toronto. Freshly made with traditional recipes and premium ingredients.</p>
+                    <a href="order.html" class="btn btn-pastry btn-lg">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h5>C Pastries</h5>
+                    <p>Authentic African pastries and smallchops made with traditional recipes and premium ingredients.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-phone-alt mr-2"></i>+1 (289) 273-4930</li>
+                        <li><i class="fa fa-envelope mr-2"></i>cspastries3@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Business Hours</h5>
+                    <ul class="list-unstyled">
+                        <li>Monday - Friday: 9am - 7pm</li>
+                        <li>Saturday: 10am - 6pm</li>
+                        <li>Sunday: 12pm - 5pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 C Pastries. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <script>
+        // Navbar scroll effect
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('.navbar').addClass('scrolled');
+            } else {
+                $('.navbar').removeClass('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        $('a[href*="#"]').on('click', function(e) {
+            e.preventDefault();
+            
+            $('html, body').animate(
+                {
+                    scrollTop: $($(this).attr('href')).offset().top - 70,
+                },
+                500,
+                'linear'
+            );
+        });
+    </script>
+</body>
+
+</html>
