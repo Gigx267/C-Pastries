@@ -17,7 +17,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
+    
     <style>
         /* ===== CSS VARIABLES - Vibrant, Authentic African Palette ===== */
         :root {
@@ -293,6 +293,194 @@
             box-shadow: var(--shadow-gold);
         }
 
+        /* ===== CART STYLES - FIXED ===== */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 380px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: var(--shadow-medium);
+            transition: right 0.3s ease;
+            z-index: 1050;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1040;
+            display: none;
+        }
+
+        .cart-overlay.show {
+            display: block;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-price {
+            color: var(--primary-red);
+            font-weight: 700;
+        }
+
+        .cart-quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            background: var(--primary-gold);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-total {
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 20px 0;
+            color: var(--primary-dark);
+        }
+
+        /* ===== PAYMENT MODAL ===== */
+        .payment-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .payment-modal.show {
+            display: flex;
+        }
+
+        .payment-content {
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .payment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .payment-header h3 {
+            margin: 0;
+            color: var(--primary-dark);
+        }
+
+        .close-payment {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .payment-form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-gold);
+            outline: none;
+        }
+
+        .payment-summary {
+            background-color: var(--light-cream);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .payment-summary h4 {
+            margin-top: 0;
+            color: var(--primary-dark);
+        }
+
+        .payment-summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .payment-total {
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
         /* ===== CTA SECTION - Bold & Urgent ===== */
         .cta-section {
             background: linear-gradient(rgba(212, 175, 55, 0.9), rgba(212, 175, 55, 0.9)), url('cta-bg.jpg') center/cover no-repeat;
@@ -376,7 +564,23 @@
             opacity: 0.7;
         }
 
-        /* ===== RESPONSIVE ADJUSTMENTS ===== */
+        /* ===== LOADING SPINNER ===== */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ===== RESPONSIVE ADJUSTMENTS - FIXED ===== */
         @media (max-width: 768px) {
             .menu-hero h1 {
                 font-size: 2.5rem;
@@ -394,6 +598,95 @@
                 font-size: 1rem;
                 margin: 5px 0;
             }
+            
+            .cart-sidebar {
+                width: 320px;
+                max-width: 85vw;
+            }
+            
+            .payment-content {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cart-sidebar {
+                width: 280px;
+                max-width: 90vw;
+            }
+        }
+
+        /* ===== DELIVERY OPTIONS ===== */
+        .delivery-options {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .delivery-option {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .delivery-option.selected {
+            border-color: var(--primary-gold);
+            background-color: rgba(244, 89, 17, 0.1);
+        }
+
+        .delivery-option input {
+            display: none;
+        }
+
+        .delivery-fields {
+            display: none;
+        }
+
+        .delivery-fields.show {
+            display: block;
+        }
+
+        /* ===== SOCIAL SHARING BUTTONS ===== */
+        .social-sharing {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .instagram-btn {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            color: white;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -403,7 +696,7 @@
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
             <a href="index.html" class="navbar-brand">
-                <img   style="height: 60px;border-radius: 50%;" src="logo.jpg" alt="C Pastries Logo">
+                <img style="height: 60px;border-radius: 50%;" src="logo.jpg" alt="C Pastries Logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -423,10 +716,94 @@
                         <a href="contact.html" class="nav-link">Contact</a>
                     </li>
                 </ul>
-                <a href="order.html" class="btn btn-pastry ml-lg-3 mt-3 mt-lg-0">Order Now</a>
+                <button id="cartButton" class="btn btn-pastry ml-lg-3 mt-3 mt-lg-0">
+                    <i class="fas fa-shopping-cart"></i> Cart <span id="cartCount" class="badge badge-light">0</span>
+                </button>
             </div>
         </div>
     </nav>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4>Your Order</h4>
+            <button class="btn btn-sm btn-outline-secondary" id="closeCart">&times;</button>
+        </div>
+        <div id="cartItems">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <div class="cart-total">
+            Total: $<span id="cartTotal">0.00</span>
+        </div>
+        <button id="checkoutButton" class="btn btn-pastry btn-block" disabled>Proceed to Checkout</button>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="payment-modal" id="paymentModal">
+        <div class="payment-content">
+            <div class="payment-header">
+                <h3>Complete Your Order</h3>
+                <button class="close-payment" id="closePayment">&times;</button>
+            </div>
+            <div class="payment-summary">
+                <h4>Order Summary</h4>
+                <div id="paymentSummaryItems">
+                    <!-- Order summary items will be dynamically inserted here -->
+                </div>
+                <div class="payment-summary-item payment-total">
+                    <span>Total:</span>
+                    <span>$<span id="paymentTotal">0.00</span></span>
+                </div>
+            </div>
+            <form id="paymentForm" class="payment-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Delivery Method</label>
+                    <div class="delivery-options">
+                        <label class="delivery-option" for="pickup">
+                            <input type="radio" id="pickup" name="deliveryMethod" value="pickup" checked>
+                            <div>Pickup</div>
+                        </label>
+                        <label class="delivery-option" for="delivery">
+                            <input type="radio" id="delivery" name="deliveryMethod" value="delivery">
+                            <div>Delivery</div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="delivery-fields" id="deliveryFields">
+                    <div class="form-group">
+                        <label for="address">Delivery Address</label>
+                        <textarea id="address" class="form-control" rows="3" placeholder="Enter your full delivery address"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="specialRequests">Special Requests</label>
+                    <textarea id="specialRequests" class="form-control" rows="3" placeholder="Any special instructions or dietary requirements"></textarea>
+                </div>
+                
+                <div class="social-sharing">
+                    <a href="#" id="whatsappOrder" class="social-btn whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                    </a>
+                    <a href="#" id="instagramOrder" class="social-btn instagram-btn" target="_blank">
+                        <i class="fab fa-instagram"></i> Order via Instagram
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="menu-hero">
@@ -449,9 +826,6 @@
                 <p>Discover our premium selection of authentic Nigerian pastries and smallchops</p>
             </div>
 
-          
-
-            <!-- Savory Pastries -->
             <div class="menu-category">
                 <h3 class="category-title">Savory Pastries 🥟</h3>
                 <div class="row">
@@ -469,6 +843,13 @@
                                 <div class="item-options">
                                     <span class="option-tag">2 for $6.00</span>
                                 </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_meatpie"
+                                        data-product-name="Meat Pie"
+                                        data-product-price="300"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -486,6 +867,13 @@
                                 <div class="item-options">
                                     <span class="option-tag">2 for $7.20</span>
                                 </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_chickenpie"
+                                        data-product-name="Chicken Pie"
+                                        data-product-price="360"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -503,6 +891,13 @@
                                 <div class="item-options">
                                     <span class="option-tag">2 for $6.00</span>
                                 </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_sausageroll"
+                                        data-product-name="Sausage Roll"
+                                        data-product-price="300"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -520,6 +915,13 @@
                                 <div class="item-options">
                                     <span class="option-tag">2 for $5.50</span>
                                 </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_springrolls"
+                                        data-product-name="Spring Rolls"
+                                        data-product-price="275"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -537,13 +939,19 @@
                                 <div class="item-options">
                                     <span class="option-tag">2 for $6.50</span>
                                 </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_samosa"
+                                        data-product-name="Samosa"
+                                        data-product-price="325"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Specialty Items -->
             <div class="menu-category">
                 <h3 class="category-title">Specialty Items ✨</h3>
                 <div class="row">
@@ -561,6 +969,13 @@
                                 <div class="item-options">
                                     <span class="option-tag">2 for $5.50</span>
                                 </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_eggroll"
+                                        data-product-name="Egg Roll"
+                                        data-product-price="300"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -578,6 +993,13 @@
                                 <div class="item-options">
                                     <span class="option-tag">2 for $7.50</span>
                                 </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_scotcheggs"
+                                        data-product-name="Scotch Eggs"
+                                        data-product-price="400"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -596,13 +1018,19 @@
                                     <span class="option-tag">5 pieces</span>
                                     <span class="option-tag">10 for $15.00</span>
                                 </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_suyawings"
+                                        data-product-name="Suya Wings"
+                                        data-product-price="750"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Sweet Treats -->
             <div class="menu-category">
                 <h3 class="category-title">Sweet Treats 🍩</h3>
                 <div class="row">
@@ -623,6 +1051,13 @@
                                     <span class="option-tag">Jam</span>
                                     <span class="option-tag">Milky</span>
                                 </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_doughnut"
+                                        data-product-name="Doughnut"
+                                        data-product-price="750"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -642,6 +1077,124 @@
                                     <span class="option-tag">12 for $10</span>
                                     <span class="option-tag">20 for $18</span>
                                 </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_puffpuff"
+                                        data-product-name="Puff Puff"
+                                        data-product-price="700"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+           <div class="menu-category">
+                <h3 class="category-title">Refreshing Drinks 🍹</h3>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="d3.jpg" alt="Amstel Malt" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Amstel Malt <span class="option-tag">(330ml)</span></h4>
+                                    <div class="item-price">$3.50</div>
+                                </div>
+                                <p class="item-description">Smooth and refreshing non-alcoholic malt drink brewed from the finest barley.</p>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_amstelmalt"
+                                        data-product-name="Amstel Malt"
+                                        data-product-price="350"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="d2.jpg" alt="Malta Guinness" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Malta Guinness <span class="option-tag">(330ml)</span></h4>
+                                    <div class="item-price">$3.50</div>
+                                </div>
+                                <p class="item-description">Bold, full-bodied malt beverage packed with natural energy and rich flavor.</p>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_maltaguinness"
+                                        data-product-name="Malta Guinness"
+                                        data-product-price="350"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="d4.jpg" alt="Fayrouz Pineapple" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Fayrouz Pineapple <span class="option-tag">(330ml)</span></h4>
+                                    <div class="item-price">$3.50</div>
+                                </div>
+                                <p class="item-description">Fayrouz Pineapple blends the crispness of a sparkling drink with the tropical sweetness of ripe pineapple.</p>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_fayrouzpineapple"
+                                        data-product-name="Fayrouz Pineapple"
+                                        data-product-price="350"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="kr.jpg" alt="Chapman" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Chapman</h4>
+                                    <div class="item-price">$5.50</div>
+                                </div>
+                                <p class="item-description">Sweet. Citrus. Refreshingly iconic, it delivers a refreshing, flavorful experience. Ideal for customers looking for a unique, sweet drink.</p>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_chapman"
+                                        data-product-name="Chapman"
+                                        data-product-price="550"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="d1.jpg" alt="Capri-Sun Orange" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Capri-Sun Orange <span class="option-tag">(200ml)</span></h4>
+                                    <div class="item-price">$2.00</div>
+                                </div>
+                                <p class="item-description">Light and fruity orange drink in a convenient on-the-go pouch.</p>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_caprisunorange"
+                                        data-product-name="Capri-Sun Orange"
+                                        data-product-price="200"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -649,42 +1202,14 @@
             </div>
         </div>
     </section>
-  <!-- Special Packages -->
-            <div class="menu-category">
-                <h3 class="category-title">Special Packages 🎁</h3>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="menu-item special-item">
-                            <span class="special-badge">Best Value</span>
-                            <div class="item-image-container">
-                                <img src="gg (3).jpg" alt="Smallchop Pack" class="item-image">
-                            </div>
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h4 class="item-name">Smallchop Pack</h4>
-                                    <div class="item-price">$17.00</div>
-                                </div>
-                                <p class="item-description">The perfect assortment for sampling our most popular items. Great for a snack or sharing!</p>
-                                <div class="item-options">
-                                    <span class="option-tag">2 Samosas</span>
-                                    <span class="option-tag">2 Spring Rolls</span>
-                                    <span class="option-tag">5 Puff Puff</span>
-                                    <span class="option-tag">2 Suya Wings</span>
-                                    <span class="option-tag">1 Meat Pie</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    <!-- CTA Section -->
+    
     <section class="cta-section">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
                     <h2>Ready to Taste Authentic African Luxury?</h2>
                     <p>Place your order now and experience the rich flavors of Nigeria right here in Toronto. Freshly made with traditional recipes and premium ingredients.</p>
-                    <a href="order.html" class="btn btn-pastry btn-lg">Order Now</a>
+                    <button id="ctaCheckout" class="btn btn-pastry btn-lg" disabled>Order Now</button>
                 </div>
             </div>
         </div>
@@ -742,28 +1267,298 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
     <script>
-        // Navbar scroll effect
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 100) {
-                $('.navbar').addClass('scrolled');
-            } else {
-                $('.navbar').removeClass('scrolled');
-            }
+        // Cart state
+        let cart = [];
+
+        // DOM Ready
+        $(document).ready(function() {
+            initializeApp();
         });
 
-        // Smooth scrolling for anchor links
-        $('a[href*="#"]').on('click', function(e) {
-            e.preventDefault();
+        function initializeApp() {
+            setupEventListeners();
+            updateCartDisplay();
+        }
+
+        function setupEventListeners() {
+            // Cart toggle
+            $('#cartButton').on('click', openCart);
+            $('#closeCart').on('click', closeCart);
+            $('#cartOverlay').on('click', closeCart);
+
+            // Checkout buttons
+            $('#checkoutButton').on('click', openPaymentModal);
+            $('#ctaCheckout').on('click', openPaymentModal);
+
+            // Payment modal
+            $('#closePayment').on('click', closePaymentModal);
             
-            $('html, body').animate(
-                {
-                    scrollTop: $($(this).attr('href')).offset().top - 70,
-                },
-                500,
-                'linear'
-            );
-        });
+            // Delivery method selection
+            $('input[name="deliveryMethod"]').on('change', function() {
+                $('.delivery-option').removeClass('selected');
+                $(this).closest('.delivery-option').addClass('selected');
+                
+                if ($(this).val() === 'delivery') {
+                    $('#deliveryFields').addClass('show');
+                    $('#address').prop('required', true);
+                } else {
+                    $('#deliveryFields').removeClass('show');
+                    $('#address').prop('required', false);
+                }
+            });
+
+            // Social sharing buttons
+            $('#whatsappOrder').on('click', function(e) {
+                e.preventDefault();
+                submitOrder('whatsapp');
+            });
+            
+            $('#instagramOrder').on('click', function(e) {
+                e.preventDefault();
+                submitOrder('instagram');
+            });
+
+            // Navbar scroll effect
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            $('a[href*="#"]').on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate(
+                    {
+                        scrollTop: $($(this).attr('href')).offset().top - 70,
+                    },
+                    500,
+                    'linear'
+                );
+            });
+
+            // Add to cart buttons
+            $('.add-to-cart').on('click', function() {
+                const productId = $(this).data('product-id');
+                const productName = $(this).data('product-name');
+                const productPrice = $(this).data('product-price');
+                const priceId = $(this).data('price-id');
+                
+                addToCart(productId, productName, productPrice, priceId);
+            });
+        }
+
+        function addToCart(productId, productName, productPrice, priceId) {
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: productName,
+                    price: productPrice,
+                    priceId: priceId,
+                    quantity: 1
+                });
+            }
+            
+            updateCartDisplay();
+            showAddToCartAnimation();
+        }
+
+        function updateCartDisplay() {
+            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            $('#cartCount').text(cartCount);
+            
+            const cartItemsContainer = $('#cartItems');
+            cartItemsContainer.empty();
+            
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const cartItemHtml = `
+                    <div class="cart-item">
+                        <div class="cart-item-details">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">$${(itemTotal / 100).toFixed(2)}</div>
+                        </div>
+                        <div class="cart-quantity-controls">
+                            <button class="quantity-btn decrease-quantity" data-product-id="${item.id}">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="quantity-btn increase-quantity" data-product-id="${item.id}">+</button>
+                        </div>
+                    </div>
+                `;
+                cartItemsContainer.append(cartItemHtml);
+            });
+            
+            $('#cartTotal').text((total / 100).toFixed(2));
+            
+            // Enable/disable checkout buttons based on cart content
+            const hasItems = cart.length > 0;
+            $('#checkoutButton').prop('disabled', !hasItems);
+            $('#ctaCheckout').prop('disabled', !hasItems);
+            
+            // Add event listeners for quantity controls
+            $('.decrease-quantity').on('click', function() {
+                const productId = $(this).data('product-id');
+                updateQuantity(productId, -1);
+            });
+            
+            $('.increase-quantity').on('click', function() {
+                const productId = $(this).data('product-id');
+                updateQuantity(productId, 1);
+            });
+        }
+
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(i => i.id !== productId);
+                }
+                updateCartDisplay();
+            }
+        }
+
+        function openCart() {
+            $('#cartSidebar').addClass('open');
+            $('#cartOverlay').addClass('show');
+        }
+
+        function closeCart() {
+            $('#cartSidebar').removeClass('open');
+            $('#cartOverlay').removeClass('show');
+        }
+
+        function openPaymentModal() {
+            if (cart.length === 0) return;
+            
+            // Update payment summary
+            const paymentSummary = $('#paymentSummaryItems');
+            paymentSummary.empty();
+            
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const summaryItem = `
+                    <div class="payment-summary-item">
+                        <span>${item.name} x ${item.quantity}</span>
+                        <span>$${(itemTotal / 100).toFixed(2)}</span>
+                    </div>
+                `;
+                paymentSummary.append(summaryItem);
+            });
+            
+            $('#paymentTotal').text((total / 100).toFixed(2));
+            
+            // Show the payment modal
+            $('#paymentModal').addClass('show');
+        }
+
+        function closePaymentModal() {
+            $('#paymentModal').removeClass('show');
+        }
+
+        function showAddToCartAnimation() {
+            // Simple animation feedback
+            $('#cartCount').addClass('bounce');
+            setTimeout(() => {
+                $('#cartCount').removeClass('bounce');
+            }, 300);
+        }
+
+        function submitOrder(platform) {
+            if (cart.length === 0) return;
+            
+            // Collect form data
+            const customerInfo = {
+                name: $('#name').val(),
+                phone: $('#phone').val(),
+                deliveryMethod: $('input[name="deliveryMethod"]:checked').val(),
+                address: $('#address').val(),
+                specialRequests: $('#specialRequests').val()
+            };
+            
+            // Validate required fields
+            if (!customerInfo.name || !customerInfo.phone) {
+                alert('Please fill in all required fields: Name and Phone Number');
+                return;
+            }
+            
+            if (customerInfo.deliveryMethod === 'delivery' && !customerInfo.address) {
+                alert('Please provide a delivery address');
+                return;
+            }
+            
+            // Build order message
+            let message = `🍽️ *NEW ORDER FROM C PASTRIES WEBSITE* 🍽️%0A%0A`;
+            message += `*Customer Information:*%0A`;
+            message += `Name: ${customerInfo.name}%0A`;
+            message += `Phone: ${customerInfo.phone}%0A`;
+            message += `Delivery Method: ${customerInfo.deliveryMethod === 'delivery' ? 'Delivery' : 'Pickup'}%0A`;
+            
+            if (customerInfo.deliveryMethod === 'delivery') {
+                message += `Delivery Address: ${customerInfo.address}%0A`;
+            }
+            
+            message += `%0A*Order Details:*%0A`;
+            
+            let total = 0;
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                message += `• ${item.name} x ${item.quantity} - $${(itemTotal / 100).toFixed(2)}%0A`;
+            });
+            
+            message += `%0A*Total: $${(total / 100).toFixed(2)}*%0A`;
+            
+            if (customerInfo.specialRequests) {
+                message += `%0A*Special Requests:*%0A${customerInfo.specialRequests}%0A`;
+            }
+            
+            message += `%0A_Please confirm this order and provide estimated delivery/pickup time._`;
+            
+            // Open the appropriate platform with the order message
+            let url;
+            if (platform === 'whatsapp') {
+                url = `https://api.whatsapp.com/send/?phone=12892734930&text=${message}&type=phone_number&app_absent=0`;
+            } else if (platform === 'instagram') {
+                url = `https://www.instagram.com/direct/new/?text=${message}`;
+            }
+            
+            // Open in new tab
+            window.open(url, '_blank');
+            
+            // Optionally clear the cart after order is sent
+            // cart = [];
+            // updateCartDisplay();
+            // closePaymentModal();
+        }
+
+        // Add bounce animation to CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            .bounce {
+                animation: bounce 0.3s ease;
+            }
+            @keyframes bounce {
+                0%, 20%, 60%, 100% {transform: translateY(0);}
+                40% {transform: translateY(-10px);}
+                80% {transform: translateY(-5px);}
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
-
 </html>
