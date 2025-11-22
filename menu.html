@@ -580,43 +580,6 @@
             to { transform: rotate(360deg); }
         }
 
-        /* ===== RESPONSIVE ADJUSTMENTS - FIXED ===== */
-        @media (max-width: 768px) {
-            .menu-hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-            
-            .category-title {
-                font-size: 1.8rem;
-            }
-            
-            .navbar-light .navbar-nav .nav-link {
-                font-size: 1rem;
-                margin: 5px 0;
-            }
-            
-            .cart-sidebar {
-                width: 320px;
-                max-width: 85vw;
-            }
-            
-            .payment-content {
-                width: 95%;
-                padding: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .cart-sidebar {
-                width: 280px;
-                max-width: 90vw;
-            }
-        }
-
         /* ===== DELIVERY OPTIONS ===== */
         .delivery-options {
             display: flex;
@@ -688,6 +651,264 @@
             color: white;
             text-decoration: none;
         }
+
+        /* ===== MOBILE OPTIMIZATIONS ===== */
+        /* Mobile-specific improvements */
+        @media (max-width: 768px) {
+            /* Hero section adjustments */
+            .menu-hero {
+                padding: 100px 0 60px;
+            }
+            
+            .menu-hero h1 {
+                font-size: 2.2rem;
+                line-height: 1.2;
+            }
+            
+            .menu-hero p {
+                font-size: 1.1rem;
+                padding: 0 15px;
+            }
+            
+            /* Menu section adjustments */
+            .menu-section {
+                padding: 50px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+            
+            .category-title {
+                font-size: 1.6rem;
+                margin-bottom: 25px;
+            }
+            
+            /* Menu item adjustments */
+            .menu-item {
+                margin-bottom: 20px;
+            }
+            
+            .item-image-container {
+                height: 180px;
+            }
+            
+            .item-content {
+                padding: 15px;
+            }
+            
+            .item-name {
+                font-size: 1.2rem;
+            }
+            
+            .item-price {
+                font-size: 1.1rem;
+            }
+            
+            .item-description {
+                font-size: 0.9rem;
+            }
+            
+            /* Button adjustments for mobile */
+            .btn-pastry {
+                padding: 14px 20px;
+                font-size: 0.9rem;
+                width: 100%;
+            }
+            
+            /* Cart sidebar adjustments */
+            .cart-sidebar {
+                width: 100%;
+                max-width: 100%;
+                padding: 15px;
+            }
+            
+            .cart-item {
+                padding: 12px 0;
+            }
+            
+            .cart-total {
+                font-size: 1.2rem;
+                margin: 15px 0;
+            }
+            
+            /* Payment modal adjustments */
+            .payment-content {
+                width: 95%;
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .payment-header h3 {
+                font-size: 1.4rem;
+            }
+            
+            .form-control {
+                padding: 14px;
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+            
+            /* CTA section adjustments */
+            .cta-section {
+                padding: 60px 0;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-section p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+            
+            /* Footer adjustments */
+            .footer {
+                padding: 40px 0 20px;
+            }
+            
+            .footer h5 {
+                font-size: 1.1rem;
+            }
+            
+            /* Navigation adjustments */
+            .navbar-light .navbar-nav .nav-link {
+                font-size: 1rem;
+                margin: 5px 0;
+                text-align: center;
+            }
+            
+            .navbar-collapse {
+                background-color: var(--white);
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: var(--shadow-medium);
+                margin-top: 10px;
+            }
+            
+            /* Mobile-specific utility classes */
+            .mobile-sticky-cart {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 15px;
+                box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+                z-index: 1000;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .mobile-cart-total {
+                font-weight: 700;
+                font-size: 1.1rem;
+                color: var(--primary-red);
+            }
+            
+            /* Mobile menu grid adjustments */
+            .menu-category .row {
+                margin-left: -8px;
+                margin-right: -8px;
+            }
+            
+            .menu-category .col-md-6 {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            
+            /* Improved touch targets */
+            .add-to-cart, .quantity-btn, .delivery-option {
+                min-height: 44px; /* Apple's recommended minimum touch target */
+            }
+            
+            /* Social sharing buttons stack on mobile */
+            .social-sharing {
+                flex-direction: column;
+            }
+            
+            /* Delivery options stack on mobile */
+            .delivery-options {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .category-title {
+                font-size: 1.4rem;
+            }
+            
+            .item-image-container {
+                height: 160px;
+            }
+            
+            .cart-sidebar {
+                padding: 12px;
+            }
+        }
+
+        /* Additional mobile-specific improvements */
+        .mobile-cart-indicator {
+            position: fixed;
+            top: 80px;
+            right: 15px;
+            background: var(--primary-red);
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 999;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Improved mobile navigation */
+        .navbar-toggler {
+            border: none;
+            padding: 5px 10px;
+        }
+        
+        .navbar-toggler:focus {
+            outline: none;
+        }
+        
+        /* Mobile-optimized form elements */
+        input, select, textarea {
+            font-size: 16px !important; /* Prevents zoom on iOS */
+        }
+        
+        /* Enhanced mobile animations */
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        
+        .mobile-sticky-cart {
+            animation: slideUp 0.3s ease;
+        }
+        
+        /* Improved scrolling on mobile */
+        .menu-section {
+            -webkit-overflow-scrolling: touch;
+        }
     </style>
 </head>
 
@@ -723,6 +944,11 @@
         </div>
     </nav>
 
+    <!-- Mobile cart indicator -->
+    <div class="mobile-cart-indicator" id="mobileCartIndicator" style="display: none;">
+        <span id="mobileCartCount">0</span>
+    </div>
+
     <!-- Cart Sidebar -->
     <div class="cart-overlay" id="cartOverlay"></div>
     <div class="cart-sidebar" id="cartSidebar">
@@ -737,6 +963,15 @@
             Total: $<span id="cartTotal">0.00</span>
         </div>
         <button id="checkoutButton" class="btn btn-pastry btn-block" disabled>Proceed to Checkout</button>
+    </div>
+
+    <!-- Mobile sticky cart -->
+    <div class="mobile-sticky-cart" id="mobileStickyCart" style="display: none;">
+        <div>
+            <span class="mobile-cart-total">$<span id="mobileStickyTotal">0.00</span></span>
+            <span id="mobileStickyCount">0 items</span>
+        </div>
+        <button id="mobileCheckoutButton" class="btn btn-pastry" disabled>Checkout</button>
     </div>
 
     <!-- Payment Modal -->
@@ -795,10 +1030,10 @@
                 
                 <div class="social-sharing">
                     <a href="#" id="whatsappOrder" class="social-btn whatsapp-btn" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        <i class="fab fa-whatsapp"></i> Order via WhatsApp & Make Payment 
                     </a>
                     <a href="#" id="instagramOrder" class="social-btn instagram-btn" target="_blank">
-                        <i class="fab fa-instagram"></i> Order via Instagram
+                        <i class="fab fa-instagram"></i> Order via Instagram & Make Payment 
                     </a>
                 </div>
             </form>
@@ -1278,6 +1513,7 @@
         function initializeApp() {
             setupEventListeners();
             updateCartDisplay();
+            checkMobileView();
         }
 
         function setupEventListeners() {
@@ -1289,6 +1525,7 @@
             // Checkout buttons
             $('#checkoutButton').on('click', openPaymentModal);
             $('#ctaCheckout').on('click', openPaymentModal);
+            $('#mobileCheckoutButton').on('click', openPaymentModal);
 
             // Payment modal
             $('#closePayment').on('click', closePaymentModal);
@@ -1348,6 +1585,20 @@
                 
                 addToCart(productId, productName, productPrice, priceId);
             });
+
+            // Window resize handler for mobile view
+            $(window).on('resize', checkMobileView);
+        }
+
+        function checkMobileView() {
+            // Show/hide mobile cart indicator based on screen size
+            if ($(window).width() <= 768) {
+                if (cart.length > 0) {
+                    $('#mobileCartIndicator').show();
+                }
+            } else {
+                $('#mobileCartIndicator').hide();
+            }
         }
 
         function addToCart(productId, productName, productPrice, priceId) {
@@ -1372,6 +1623,7 @@
         function updateCartDisplay() {
             const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
             $('#cartCount').text(cartCount);
+            $('#mobileCartCount').text(cartCount);
             
             const cartItemsContainer = $('#cartItems');
             cartItemsContainer.empty();
@@ -1398,12 +1650,27 @@
                 cartItemsContainer.append(cartItemHtml);
             });
             
-            $('#cartTotal').text((total / 100).toFixed(2));
+            const formattedTotal = (total / 100).toFixed(2);
+            $('#cartTotal').text(formattedTotal);
+            $('#mobileStickyTotal').text(formattedTotal);
+            $('#mobileStickyCount').text(cartCount + (cartCount === 1 ? ' item' : ' items'));
             
             // Enable/disable checkout buttons based on cart content
             const hasItems = cart.length > 0;
             $('#checkoutButton').prop('disabled', !hasItems);
             $('#ctaCheckout').prop('disabled', !hasItems);
+            $('#mobileCheckoutButton').prop('disabled', !hasItems);
+            
+            // Show/hide mobile sticky cart
+            if (hasItems && $(window).width() <= 768) {
+                $('#mobileStickyCart').show();
+                $('#mobileCartIndicator').show();
+            } else {
+                $('#mobileStickyCart').hide();
+                if ($(window).width() > 768) {
+                    $('#mobileCartIndicator').hide();
+                }
+            }
             
             // Add event listeners for quantity controls
             $('.decrease-quantity').on('click', function() {
@@ -1473,8 +1740,10 @@
         function showAddToCartAnimation() {
             // Simple animation feedback
             $('#cartCount').addClass('bounce');
+            $('#mobileCartCount').addClass('bounce');
             setTimeout(() => {
                 $('#cartCount').removeClass('bounce');
+                $('#mobileCartCount').removeClass('bounce');
             }, 300);
         }
 
