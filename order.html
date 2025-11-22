@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Menu - C Pastries: Authentic African Luxury</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Explore our premium selection of authentic Nigerian pastries and smallchops. Meat pies, puff puff, samosas, and more." name="description">
+    <meta name="keywords" content="Nigerian pastries menu, African smallchops, Toronto bakery menu, Nigerian snacks prices">
+
+    <link href="logo.jpg" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    
+    <style>
+        /* ===== CSS VARIABLES - Vibrant, Authentic African Palette ===== */
+        :root {
+            --primary-gold: #f45911; /* Rich African gold */
+            --primary-red: #c41e3a; /* Vibrant red for accents */
+            --primary-dark: #1a1a1a; /* Deep black for text */
+            --accent-gold: #f1c40f; /* Bright gold for highlights */
+            --light-cream: #fef5e7; /* Warm cream background */
+            --medium-cream: #f5e6d3; /* Light brown for sections */
+            --white: #ffffff;
+            --text-dark: #2c2c2c;
+            --text-light: #f8f5f2;
+            --text-muted: #7a7a7a;
+            --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.15);
+            --shadow-gold: 0 4px 15px rgba(212, 175, 55, 0.4);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+
+        /* ===== GLOBAL STYLES - Bold & Vibrant ===== */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .pastry-primary {
+            color: var(--primary-gold);
+        }
+
+        .pastry-red {
+            color: var(--primary-red);
+        }
+
+        /* ===== BUTTONS - Bold & Eye-catching ===== */
+        .btn-pastry {
+            background-color: var(--primary-red);
+            border: 2px solid var(--primary-red);
+            color: var(--white);
+            font-weight: 700;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-pastry:hover {
+            background-color: transparent;
+            color: var(--primary-red);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-outline-pastry {
+            background-color: transparent;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+            font-weight: 700;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .btn-outline-pastry:hover {
+            background-color: var(--primary-gold);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* ===== HEADER & NAVIGATION - Simplified & Bold ===== */
+        .navbar {
+            padding: 15px 0;
+            transition: padding var(--transition), background-color var(--transition), box-shadow var(--transition);
+            box-shadow: none;
+            background-color: var(--white) !important;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(4px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .navbar-light .navbar-nav .nav-link {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            margin: 0 10px;
+        }
+        
+        .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link.active {
+            color: var(--primary-red);
+        }
+
+        /* ===== HERO SECTION - Bold & Appetizing ===== */
+        .menu-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./bg3.webp') center/cover no-repeat;
+            color: var(--white);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .menu-hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* ===== MENU SECTION - Vibrant & Appetizing ===== */
+        .menu-section {
+            background-color: var(--light-cream);
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-red);
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .menu-category {
+            margin-bottom: 80px;
+        }
+
+        .category-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-gold);
+            display: inline-block;
+        }
+
+        .menu-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            height: 100%;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .item-image-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .item-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-item:hover .item-image {
+            transform: scale(1.1);
+        }
+
+        .item-content {
+            padding: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .item-name {
+            font-size: 1.4rem;
+            margin-bottom: 0;
+            color: var(--primary-dark);
+            flex: 1;
+        }
+
+        .item-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin-left: 15px;
+        }
+
+        .item-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .item-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .option-tag {
+            background-color: var(--medium-cream);
+            color: var(--text-dark);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .special-item {
+            border: 3px solid var(--primary-gold);
+        }
+
+        .special-badge {
+            background-color: var(--primary-gold);
+            color: var(--primary-dark);
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            z-index: 3;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-gold);
+        }
+
+        /* ===== CART STYLES - FIXED ===== */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 380px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: var(--shadow-medium);
+            transition: right 0.3s ease;
+            z-index: 1050;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1040;
+            display: none;
+        }
+
+        .cart-overlay.show {
+            display: block;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-price {
+            color: var(--primary-red);
+            font-weight: 700;
+        }
+
+        .cart-quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            background: var(--primary-gold);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-total {
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 20px 0;
+            color: var(--primary-dark);
+        }
+
+        /* ===== PAYMENT MODAL ===== */
+        .payment-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .payment-modal.show {
+            display: flex;
+        }
+
+        .payment-content {
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .payment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .payment-header h3 {
+            margin: 0;
+            color: var(--primary-dark);
+        }
+
+        .close-payment {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .payment-form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-gold);
+            outline: none;
+        }
+
+        .payment-summary {
+            background-color: var(--light-cream);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .payment-summary h4 {
+            margin-top: 0;
+            color: var(--primary-dark);
+        }
+
+        .payment-summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .payment-total {
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+        /* ===== CTA SECTION - Bold & Urgent ===== */
+        .cta-section {
+            background: linear-gradient(rgba(212, 175, 55, 0.9), rgba(212, 175, 55, 0.9)), url('cta-bg.jpg') center/cover no-repeat;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 2.8rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .btn-pastry {
+            background-color: var(--primary-red);
+            border-color: var(--primary-red);
+        }
+
+        .cta-section .btn-pastry:hover {
+            background-color: transparent;
+            color: var(--primary-red);
+            border-color: var(--primary-red);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 60px 0 30px;
+        }
+
+        .footer h5 {
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer a {
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--primary-gold);
+            text-decoration: none;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-gold);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* ===== LOADING SPINNER ===== */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ===== RESPONSIVE ADJUSTMENTS - FIXED ===== */
+        @media (max-width: 768px) {
+            .menu-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .category-title {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-light .navbar-nav .nav-link {
+                font-size: 1rem;
+                margin: 5px 0;
+            }
+            
+            .cart-sidebar {
+                width: 320px;
+                max-width: 85vw;
+            }
+            
+            .payment-content {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cart-sidebar {
+                width: 280px;
+                max-width: 90vw;
+            }
+        }
+
+        /* ===== DELIVERY OPTIONS ===== */
+        .delivery-options {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .delivery-option {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .delivery-option.selected {
+            border-color: var(--primary-gold);
+            background-color: rgba(244, 89, 17, 0.1);
+        }
+
+        .delivery-option input {
+            display: none;
+        }
+
+        .delivery-fields {
+            display: none;
+        }
+
+        .delivery-fields.show {
+            display: block;
+        }
+
+        /* ===== SOCIAL SHARING BUTTONS ===== */
+        .social-sharing {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .instagram-btn {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img style="height: 60px;border-radius: 50%;" src="logo.jpg" alt="C Pastries Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="menu.html" class="nav-link active">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <button id="cartButton" class="btn btn-pastry ml-lg-3 mt-3 mt-lg-0">
+                    <i class="fas fa-shopping-cart"></i> Cart <span id="cartCount" class="badge badge-light">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4>Your Order</h4>
+            <button class="btn btn-sm btn-outline-secondary" id="closeCart">&times;</button>
+        </div>
+        <div id="cartItems">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <div class="cart-total">
+            Total: $<span id="cartTotal">0.00</span>
+        </div>
+        <button id="checkoutButton" class="btn btn-pastry btn-block" disabled>Proceed to Checkout</button>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="payment-modal" id="paymentModal">
+        <div class="payment-content">
+            <div class="payment-header">
+                <h3>Complete Your Order</h3>
+                <button class="close-payment" id="closePayment">&times;</button>
+            </div>
+            <div class="payment-summary">
+                <h4>Order Summary</h4>
+                <div id="paymentSummaryItems">
+                    <!-- Order summary items will be dynamically inserted here -->
+                </div>
+                <div class="payment-summary-item payment-total">
+                    <span>Total:</span>
+                    <span>$<span id="paymentTotal">0.00</span></span>
+                </div>
+            </div>
+            <form id="paymentForm" class="payment-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Delivery Method</label>
+                    <div class="delivery-options">
+                        <label class="delivery-option" for="pickup">
+                            <input type="radio" id="pickup" name="deliveryMethod" value="pickup" checked>
+                            <div>Pickup</div>
+                        </label>
+                        <label class="delivery-option" for="delivery">
+                            <input type="radio" id="delivery" name="deliveryMethod" value="delivery">
+                            <div>Delivery</div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="delivery-fields" id="deliveryFields">
+                    <div class="form-group">
+                        <label for="address">Delivery Address</label>
+                        <textarea id="address" class="form-control" rows="3" placeholder="Enter your full delivery address"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="specialRequests">Special Requests</label>
+                    <textarea id="specialRequests" class="form-control" rows="3" placeholder="Any special instructions or dietary requirements"></textarea>
+                </div>
+                
+                <div class="social-sharing">
+                    <a href="#" id="whatsappOrder" class="social-btn whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                    </a>
+                    <a href="#" id="instagramOrder" class="social-btn instagram-btn" target="_blank">
+                        <i class="fab fa-instagram"></i> Order via Instagram
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="menu-hero">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1>Authentic African Pastries</h1>
+                    <p>Handcrafted with traditional recipes and premium ingredients. Experience the rich flavors of Nigeria right here in Toronto.</p>
+                    <a href="#menu" class="btn btn-outline-pastry btn-lg">View Our Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Menu</h2>
+                <p>Discover our premium selection of authentic Nigerian pastries and smallchops</p>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="category-title">Savory Pastries 🥟</h3>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="bg3.webp" alt="Meat Pie" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Meat Pie</h4>
+                                    <div class="item-price">$3.00</div>
+                                </div>
+                                <p class="item-description">Flaky pastry filled with seasoned ground beef and vegetables.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">2 for $6.00</span>
+                                </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_meatpie"
+                                        data-product-name="Meat Pie"
+                                        data-product-price="300"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="bvv (1).jpg" alt="Chicken Pie" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Chicken Pie</h4>
+                                    <div class="item-price">$3.60</div>
+                                </div>
+                                <p class="item-description">Tender chicken pieces in a savory sauce, encased in buttery pastry.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">2 for $7.20</span>
+                                </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_chickenpie"
+                                        data-product-name="Chicken Pie"
+                                        data-product-price="360"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="BH.webp" alt="Sausage Roll" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Sausage Roll</h4>
+                                    <div class="item-price">$3.00</div>
+                                </div>
+                                <p class="item-description">Juicy sausage wrapped in golden, flaky pastry.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">2 for $6.00</span>
+                                </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_sausageroll"
+                                        data-product-name="Sausage Roll"
+                                        data-product-price="300"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="SP.jpg" alt="Spring Rolls" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Spring Rolls</h4>
+                                    <div class="item-price">$2.75</div>
+                                </div>
+                                <p class="item-description">Crispy rolls filled with seasoned vegetables and meat.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">2 for $5.50</span>
+                                </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_springrolls"
+                                        data-product-name="Spring Rolls"
+                                        data-product-price="275"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="gg (8).jpg" alt="Samosa" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Samosa</h4>
+                                    <div class="item-price">$3.25</div>
+                                </div>
+                                <p class="item-description">Triangular pastry filled with spiced potatoes, peas, and meat.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">2 for $6.50</span>
+                                </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_samosa"
+                                        data-product-name="Samosa"
+                                        data-product-price="325"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="category-title">Specialty Items ✨</h3>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="cp (1).jpg" alt="Egg Roll" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Egg Roll</h4>
+                                    <div class="item-price">$3.00</div>
+                                </div>
+                                <p class="item-description">Hard-boiled egg wrapped in seasoned dough and deep-fried to perfection.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">2 for $5.50</span>
+                                </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_eggroll"
+                                        data-product-name="Egg Roll"
+                                        data-product-price="300"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="cp (10).jpg" alt="Scotch Eggs" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Scotch Eggs</h4>
+                                    <div class="item-price">$4.00</div>
+                                </div>
+                                <p class="item-description">Boiled eggs wrapped in seasoned meat and breadcrumbs, then fried.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">2 for $7.50</span>
+                                </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_scotcheggs"
+                                        data-product-name="Scotch Eggs"
+                                        data-product-price="400"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="cp (5).jpg" alt="Suya Wings" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Suya Wings</h4>
+                                    <div class="item-price">$7.50</div>
+                                </div>
+                                <p class="item-description">Chicken wings seasoned with traditional Nigerian suya spice.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">5 pieces</span>
+                                    <span class="option-tag">10 for $15.00</span>
+                                </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_suyawings"
+                                        data-product-name="Suya Wings"
+                                        data-product-price="750"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="category-title">Sweet Treats 🍩</h3>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="cp (7).jpg" alt="Doughnut" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Doughnut</h4>
+                                    <div class="item-price">$7.50</div>
+                                </div>
+                                <p class="item-description">Soft, fluffy doughnuts with your choice of topping.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">2 pieces</span>
+                                    <span class="option-tag">Sugar</span>
+                                    <span class="option-tag">Jam</span>
+                                    <span class="option-tag">Milky</span>
+                                </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_doughnut"
+                                        data-product-name="Doughnut"
+                                        data-product-price="750"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="cp (3).jpg" alt="Puff Puff" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Puff Puff</h4>
+                                    <div class="item-price">$7.00</div>
+                                </div>
+                                <p class="item-description">Classic Nigerian fried dough balls, light and sweet.</p>
+                                <div class="item-options">
+                                    <span class="option-tag">8 pieces</span>
+                                    <span class="option-tag">12 for $10</span>
+                                    <span class="option-tag">20 for $18</span>
+                                </div>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_puffpuff"
+                                        data-product-name="Puff Puff"
+                                        data-product-price="700"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+           <div class="menu-category">
+                <h3 class="category-title">Refreshing Drinks 🍹</h3>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="d3.jpg" alt="Amstel Malt" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Amstel Malt <span class="option-tag">(330ml)</span></h4>
+                                    <div class="item-price">$3.50</div>
+                                </div>
+                                <p class="item-description">Smooth and refreshing non-alcoholic malt drink brewed from the finest barley.</p>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_amstelmalt"
+                                        data-product-name="Amstel Malt"
+                                        data-product-price="350"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="d2.jpg" alt="Malta Guinness" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Malta Guinness <span class="option-tag">(330ml)</span></h4>
+                                    <div class="item-price">$3.50</div>
+                                </div>
+                                <p class="item-description">Bold, full-bodied malt beverage packed with natural energy and rich flavor.</p>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_maltaguinness"
+                                        data-product-name="Malta Guinness"
+                                        data-product-price="350"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="d4.jpg" alt="Fayrouz Pineapple" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Fayrouz Pineapple <span class="option-tag">(330ml)</span></h4>
+                                    <div class="item-price">$3.50</div>
+                                </div>
+                                <p class="item-description">Fayrouz Pineapple blends the crispness of a sparkling drink with the tropical sweetness of ripe pineapple.</p>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_fayrouzpineapple"
+                                        data-product-name="Fayrouz Pineapple"
+                                        data-product-price="350"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="kr.jpg" alt="Chapman" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Chapman</h4>
+                                    <div class="item-price">$5.50</div>
+                                </div>
+                                <p class="item-description">Sweet. Citrus. Refreshingly iconic, it delivers a refreshing, flavorful experience. Ideal for customers looking for a unique, sweet drink.</p>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_chapman"
+                                        data-product-name="Chapman"
+                                        data-product-price="550"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="d1.jpg" alt="Capri-Sun Orange" class="item-image">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h4 class="item-name">Capri-Sun Orange <span class="option-tag">(200ml)</span></h4>
+                                    <div class="item-price">$2.00</div>
+                                </div>
+                                <p class="item-description">Light and fruity orange drink in a convenient on-the-go pouch.</p>
+                                <button class="btn btn-pastry btn-block mt-3 add-to-cart" 
+                                        data-product-id="prod_caprisunorange"
+                                        data-product-name="Capri-Sun Orange"
+                                        data-product-price="200"
+                                        data-price-id="price_1Q8Y6GKx4v1Q9bZ9Y8t7hJ6g">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2>Ready to Taste Authentic African Luxury?</h2>
+                    <p>Place your order now and experience the rich flavors of Nigeria right here in Toronto. Freshly made with traditional recipes and premium ingredients.</p>
+                    <button id="ctaCheckout" class="btn btn-pastry btn-lg" disabled>Order Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h5>C Pastries</h5>
+                    <p>Authentic African pastries and smallchops made with traditional recipes and premium ingredients.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-phone-alt mr-2"></i>+1 (289) 273-4930</li>
+                        <li><i class="fa fa-envelope mr-2"></i>cspastries3@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Business Hours</h5>
+                    <ul class="list-unstyled">
+                        <li>Monday - Friday: 9am - 7pm</li>
+                        <li>Saturday: 10am - 6pm</li>
+                        <li>Sunday: 12pm - 5pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 C Pastries. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <script>
+        // Cart state
+        let cart = [];
+
+        // DOM Ready
+        $(document).ready(function() {
+            initializeApp();
+        });
+
+        function initializeApp() {
+            setupEventListeners();
+            updateCartDisplay();
+        }
+
+        function setupEventListeners() {
+            // Cart toggle
+            $('#cartButton').on('click', openCart);
+            $('#closeCart').on('click', closeCart);
+            $('#cartOverlay').on('click', closeCart);
+
+            // Checkout buttons
+            $('#checkoutButton').on('click', openPaymentModal);
+            $('#ctaCheckout').on('click', openPaymentModal);
+
+            // Payment modal
+            $('#closePayment').on('click', closePaymentModal);
+            
+            // Delivery method selection
+            $('input[name="deliveryMethod"]').on('change', function() {
+                $('.delivery-option').removeClass('selected');
+                $(this).closest('.delivery-option').addClass('selected');
+                
+                if ($(this).val() === 'delivery') {
+                    $('#deliveryFields').addClass('show');
+                    $('#address').prop('required', true);
+                } else {
+                    $('#deliveryFields').removeClass('show');
+                    $('#address').prop('required', false);
+                }
+            });
+
+            // Social sharing buttons
+            $('#whatsappOrder').on('click', function(e) {
+                e.preventDefault();
+                submitOrder('whatsapp');
+            });
+            
+            $('#instagramOrder').on('click', function(e) {
+                e.preventDefault();
+                submitOrder('instagram');
+            });
+
+            // Navbar scroll effect
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            $('a[href*="#"]').on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate(
+                    {
+                        scrollTop: $($(this).attr('href')).offset().top - 70,
+                    },
+                    500,
+                    'linear'
+                );
+            });
+
+            // Add to cart buttons
+            $('.add-to-cart').on('click', function() {
+                const productId = $(this).data('product-id');
+                const productName = $(this).data('product-name');
+                const productPrice = $(this).data('product-price');
+                const priceId = $(this).data('price-id');
+                
+                addToCart(productId, productName, productPrice, priceId);
+            });
+        }
+
+        function addToCart(productId, productName, productPrice, priceId) {
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: productName,
+                    price: productPrice,
+                    priceId: priceId,
+                    quantity: 1
+                });
+            }
+            
+            updateCartDisplay();
+            showAddToCartAnimation();
+        }
+
+        function updateCartDisplay() {
+            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            $('#cartCount').text(cartCount);
+            
+            const cartItemsContainer = $('#cartItems');
+            cartItemsContainer.empty();
+            
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const cartItemHtml = `
+                    <div class="cart-item">
+                        <div class="cart-item-details">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">$${(itemTotal / 100).toFixed(2)}</div>
+                        </div>
+                        <div class="cart-quantity-controls">
+                            <button class="quantity-btn decrease-quantity" data-product-id="${item.id}">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="quantity-btn increase-quantity" data-product-id="${item.id}">+</button>
+                        </div>
+                    </div>
+                `;
+                cartItemsContainer.append(cartItemHtml);
+            });
+            
+            $('#cartTotal').text((total / 100).toFixed(2));
+            
+            // Enable/disable checkout buttons based on cart content
+            const hasItems = cart.length > 0;
+            $('#checkoutButton').prop('disabled', !hasItems);
+            $('#ctaCheckout').prop('disabled', !hasItems);
+            
+            // Add event listeners for quantity controls
+            $('.decrease-quantity').on('click', function() {
+                const productId = $(this).data('product-id');
+                updateQuantity(productId, -1);
+            });
+            
+            $('.increase-quantity').on('click', function() {
+                const productId = $(this).data('product-id');
+                updateQuantity(productId, 1);
+            });
+        }
+
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(i => i.id !== productId);
+                }
+                updateCartDisplay();
+            }
+        }
+
+        function openCart() {
+            $('#cartSidebar').addClass('open');
+            $('#cartOverlay').addClass('show');
+        }
+
+        function closeCart() {
+            $('#cartSidebar').removeClass('open');
+            $('#cartOverlay').removeClass('show');
+        }
+
+        function openPaymentModal() {
+            if (cart.length === 0) return;
+            
+            // Update payment summary
+            const paymentSummary = $('#paymentSummaryItems');
+            paymentSummary.empty();
+            
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const summaryItem = `
+                    <div class="payment-summary-item">
+                        <span>${item.name} x ${item.quantity}</span>
+                        <span>$${(itemTotal / 100).toFixed(2)}</span>
+                    </div>
+                `;
+                paymentSummary.append(summaryItem);
+            });
+            
+            $('#paymentTotal').text((total / 100).toFixed(2));
+            
+            // Show the payment modal
+            $('#paymentModal').addClass('show');
+        }
+
+        function closePaymentModal() {
+            $('#paymentModal').removeClass('show');
+        }
+
+        function showAddToCartAnimation() {
+            // Simple animation feedback
+            $('#cartCount').addClass('bounce');
+            setTimeout(() => {
+                $('#cartCount').removeClass('bounce');
+            }, 300);
+        }
+
+        function submitOrder(platform) {
+            if (cart.length === 0) return;
+            
+            // Collect form data
+            const customerInfo = {
+                name: $('#name').val(),
+                phone: $('#phone').val(),
+                deliveryMethod: $('input[name="deliveryMethod"]:checked').val(),
+                address: $('#address').val(),
+                specialRequests: $('#specialRequests').val()
+            };
+            
+            // Validate required fields
+            if (!customerInfo.name || !customerInfo.phone) {
+                alert('Please fill in all required fields: Name and Phone Number');
+                return;
+            }
+            
+            if (customerInfo.deliveryMethod === 'delivery' && !customerInfo.address) {
+                alert('Please provide a delivery address');
+                return;
+            }
+            
+            // Build order message
+            let message = `🍽️ *NEW ORDER FROM C PASTRIES WEBSITE* 🍽️%0A%0A`;
+            message += `*Customer Information:*%0A`;
+            message += `Name: ${customerInfo.name}%0A`;
+            message += `Phone: ${customerInfo.phone}%0A`;
+            message += `Delivery Method: ${customerInfo.deliveryMethod === 'delivery' ? 'Delivery' : 'Pickup'}%0A`;
+            
+            if (customerInfo.deliveryMethod === 'delivery') {
+                message += `Delivery Address: ${customerInfo.address}%0A`;
+            }
+            
+            message += `%0A*Order Details:*%0A`;
+            
+            let total = 0;
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                message += `• ${item.name} x ${item.quantity} - $${(itemTotal / 100).toFixed(2)}%0A`;
+            });
+            
+            message += `%0A*Total: $${(total / 100).toFixed(2)}*%0A`;
+            
+            if (customerInfo.specialRequests) {
+                message += `%0A*Special Requests:*%0A${customerInfo.specialRequests}%0A`;
+            }
+            
+            message += `%0A_Please confirm this order and provide estimated delivery/pickup time._`;
+            
+            // Open the appropriate platform with the order message
+            let url;
+            if (platform === 'whatsapp') {
+                url = `https://api.whatsapp.com/send/?phone=12892734930&text=${message}&type=phone_number&app_absent=0`;
+            } else if (platform === 'instagram') {
+                url = `https://www.instagram.com/direct/new/?text=${message}`;
+            }
+            
+            // Open in new tab
+            window.open(url, '_blank');
+            
+            // Optionally clear the cart after order is sent
+            // cart = [];
+            // updateCartDisplay();
+            // closePaymentModal();
+        }
+
+        // Add bounce animation to CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            .bounce {
+                animation: bounce 0.3s ease;
+            }
+            @keyframes bounce {
+                0%, 20%, 60%, 100% {transform: translateY(0);}
+                40% {transform: translateY(-10px);}
+                80% {transform: translateY(-5px);}
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
