@@ -966,10 +966,7 @@
                     </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="specialRequests">Special Requests</label>
-                    <textarea id="specialRequests" class="form-control" rows="3" placeholder="Any special instructions or dietary requirements"></textarea>
-                </div>
+              
                 
                 <!-- Stripe Payment Form -->
                 <div class="stripe-payment-form">
@@ -1007,7 +1004,209 @@
 
     <!-- Hero Section -->
    
+ 
 
+
+
+    <style> 
+
+/* Carousel Styles */
+.carousel-item {
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item img {
+    filter: brightness(0.7);
+}
+
+.carousel-caption {
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.carousel-indicators {
+    bottom: 30px;
+}
+
+.carousel-indicators li {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators li.active {
+    background-color: #fff;
+    transform: scale(1.2);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    background-size: 60%;
+}
+
+/* Animation delays for staggered text animation */
+.carousel-caption h6:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.carousel-caption h3 {
+    animation-delay: 0.6s;
+}
+
+.carousel-caption h6:nth-child(3),
+.carousel-caption p {
+    animation-delay: 0.9s;
+}
+
+.carousel-caption a {
+    animation-delay: 1.2s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .carousel-item {
+        min-height: 70vh !important;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 2rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-item {
+        min-height: 60vh !important;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-caption .btn {
+        padding: 0.75rem 1.5rem;
+    }
+}
+</style> 
+
+<script>// Carousel initialization and customization
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('header-carousel');
+    
+    // Initialize carousel with custom settings
+    $(carousel).carousel({
+        interval: 5000, // 5 seconds between slides
+        pause: 'hover', // Pause on hover
+        wrap: true, // Loop through slides
+        keyboard: true // Enable keyboard navigation
+    });
+    
+    // Add slide transition animations
+    $(carousel).on('slide.bs.carousel', function(e) {
+        // Remove animation classes from active slide
+        const activeSlide = e.relatedTarget;
+        const captionElements = activeSlide.querySelectorAll('.carousel-caption > div > *');
+        
+        captionElements.forEach(element => {
+            element.classList.remove('animate__animated', 'animate__fadeInDown', 'animate__fadeInUp');
+        });
+    });
+    
+    $(carousel).on('slid.bs.carousel', function(e) {
+        // Add animation classes to new active slide
+        const activeSlide = document.querySelector('.carousel-item.active');
+        const captionElements = activeSlide.querySelectorAll('.carousel-caption > div > *');
+        
+        // Add staggered animations
+        captionElements.forEach((element, index) => {
+            // Reset classes
+            element.classList.remove('animate__animated', 'animate__fadeInDown', 'animate__fadeInUp');
+            
+            // Force reflow to restart animation
+            void element.offsetWidth;
+            
+            // Add appropriate animation classes
+            if (index === 0 || index === 2) {
+                element.classList.add('animate__animated', 'animate__fadeInDown');
+            } else if (index === 1) {
+                element.classList.add('animate__animated', 'animate__fadeInUp');
+            } else {
+                element.classList.add('animate__animated', 'animate__fadeInUp');
+            }
+        });
+    });
+    
+    // Add touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carousel.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, false);
+    
+    carousel.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, false);
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        
+        if (touchEndX < touchStartX - swipeThreshold) {
+            // Swipe left - next slide
+            $(carousel).carousel('next');
+        }
+        
+        if (touchEndX > touchStartX + swipeThreshold) {
+            // Swipe right - previous slide
+            $(carousel).carousel('prev');
+        }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+            $(carousel).carousel('prev');
+        } else if (e.key === 'ArrowRight') {
+            $(carousel).carousel('next');
+        }
+    });
+    
+    // Auto-play control on visibility change
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            $(carousel).carousel('pause');
+        } else {
+            $(carousel).carousel('cycle');
+        }
+    });
+}); </script> 
     <!-- Menu Section -->
     <section class="menu-section" id="menu">
         <div class="container">
@@ -1023,7 +1222,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="menu-item">
                             <div class="item-image-container">
-                                <img src="bg3.webp" alt="Meat Pie" class="item-image">
+                                <img src="./xf (1).jpg" alt="Meat Pie" class="item-image">
                             </div>
                             <div class="item-content">
                                 <div class="item-header">
@@ -1095,7 +1294,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="menu-item">
                             <div class="item-image-container">
-                                <img src="SP.jpg" alt="Spring Rolls" class="item-image">
+                                <img src="xf (2).jpg" alt="Spring Rolls" class="item-image">
                             </div>
                             <div class="item-content">
                                 <div class="item-header">
@@ -1119,7 +1318,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="menu-item">
                             <div class="item-image-container">
-                                <img src="gg (8).jpg" alt="Samosa" class="item-image">
+                                <img src="./xf (3).jpg" alt="Samosa" class="item-image">
                             </div>
                             <div class="item-content">
                                 <div class="item-header">
@@ -1918,3 +2117,20 @@
     </script>
 </body>
 </html>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
