@@ -18,15 +18,18 @@
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     
+    <!-- Stripe.js library -->
+    <script src="https://js.stripe.com/v3/"></script>
+    
     <style>
         /* ===== CSS VARIABLES - Vibrant, Authentic African Palette ===== */
         :root {
-            --primary-gold: #f45911; /* Rich African gold */
-            --primary-red: #c41e3a; /* Vibrant red for accents */
-            --primary-dark: #1a1a1a; /* Deep black for text */
-            --accent-gold: #f1c40f; /* Bright gold for highlights */
-            --light-cream: #fef5e7; /* Warm cream background */
-            --medium-cream: #f5e6d3; /* Light brown for sections */
+            --primary-gold: #f45911;
+            --primary-red: #c41e3a;
+            --primary-dark: #1a1a1a;
+            --accent-gold: #f1c40f;
+            --light-cream: #fef5e7;
+            --medium-cream: #f5e6d3;
             --white: #ffffff;
             --text-dark: #2c2c2c;
             --text-light: #f8f5f2;
@@ -36,6 +39,8 @@
             --shadow-gold: 0 4px 15px rgba(212, 175, 55, 0.4);
             --transition: all 0.3s ease;
             --border-radius: 8px;
+            --pink-primary: #e91e63;
+            --pink-light: #f8bbd9;
         }
 
         /* ===== GLOBAL STYLES - Bold & Vibrant ===== */
@@ -53,13 +58,8 @@
             color: var(--primary-dark);
         }
 
-        .pastry-primary {
-            color: var(--primary-gold);
-        }
-
-        .pastry-red {
-            color: var(--primary-red);
-        }
+        .pastry-primary { color: var(--primary-gold); }
+        .pastry-red { color: var(--primary-red); }
 
         /* ===== BUTTONS - Bold & Eye-catching ===== */
         .btn-pastry {
@@ -614,7 +614,93 @@
             display: block;
         }
 
-        /* ===== SOCIAL SHARING BUTTONS ===== */
+        /* ===== STRIPE PAYMENT FORM ===== */
+        .stripe-payment-form {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .stripe-element {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            margin-bottom: 15px;
+        }
+
+        .stripe-element--focus {
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 1px var(--primary-gold);
+        }
+
+        .stripe-element--invalid {
+            border-color: #fa755a;
+        }
+
+        /* UPDATED: Pink and White Payment Button */
+        .stripe-payment-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--pink-primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .stripe-payment-btn:hover {
+            background-color: #d81b60;
+        }
+
+        .stripe-payment-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        /* ===== INVOICE SUCCESS MESSAGE ===== */
+        .invoice-success {
+            text-align: center;
+            padding: 30px;
+            background-color: #f0f9f0;
+            border: 1px solid #c3e6c3;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .invoice-success h4 {
+            color: #2d5016;
+            margin-bottom: 15px;
+        }
+
+        .invoice-success p {
+            color: #2d5016;
+            margin-bottom: 10px;
+        }
+
+        .invoice-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: var(--primary-gold);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .invoice-link:hover {
+            background-color: #e04a0c;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* UPDATED: Pink and White Social Sharing Buttons */
         .social-sharing {
             display: flex;
             gap: 10px;
@@ -633,235 +719,81 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            border: 2px solid var(--pink-primary);
         }
 
         .whatsapp-btn {
-            background-color: #25D366;
+            background-color: var(--pink-primary);
             color: white;
         }
 
         .instagram-btn {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            color: white;
+            background-color: white;
+            color: var(--pink-primary);
         }
 
         .social-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            color: white;
             text-decoration: none;
         }
 
+        .whatsapp-btn:hover {
+            background-color: white;
+            color: var(--pink-primary);
+        }
+
+        .instagram-btn:hover {
+            background-color: var(--pink-primary);
+            color: white;
+        }
+
         /* ===== MOBILE OPTIMIZATIONS ===== */
-        /* Mobile-specific improvements */
         @media (max-width: 768px) {
-            /* Hero section adjustments */
-            .menu-hero {
-                padding: 100px 0 60px;
-            }
-            
-            .menu-hero h1 {
-                font-size: 2.2rem;
-                line-height: 1.2;
-            }
-            
-            .menu-hero p {
-                font-size: 1.1rem;
-                padding: 0 15px;
-            }
-            
-            /* Menu section adjustments */
-            .menu-section {
-                padding: 50px 0;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title p {
-                font-size: 1rem;
-                padding: 0 15px;
-            }
-            
-            .category-title {
-                font-size: 1.6rem;
-                margin-bottom: 25px;
-            }
-            
-            /* Menu item adjustments */
-            .menu-item {
-                margin-bottom: 20px;
-            }
-            
-            .item-image-container {
-                height: 180px;
-            }
-            
-            .item-content {
-                padding: 15px;
-            }
-            
-            .item-name {
-                font-size: 1.2rem;
-            }
-            
-            .item-price {
-                font-size: 1.1rem;
-            }
-            
-            .item-description {
-                font-size: 0.9rem;
-            }
-            
-            /* Button adjustments for mobile */
-            .btn-pastry {
-                padding: 14px 20px;
-                font-size: 0.9rem;
-                width: 100%;
-            }
-            
-            /* Cart sidebar adjustments */
-            .cart-sidebar {
-                width: 100%;
-                max-width: 100%;
-                padding: 15px;
-            }
-            
-            .cart-item {
-                padding: 12px 0;
-            }
-            
-            .cart-total {
-                font-size: 1.2rem;
-                margin: 15px 0;
-            }
-            
-            /* Payment modal adjustments */
-            .payment-content {
-                width: 95%;
-                padding: 20px;
-                margin: 10px;
-            }
-            
-            .payment-header h3 {
-                font-size: 1.4rem;
-            }
-            
-            .form-control {
-                padding: 14px;
-                font-size: 16px; /* Prevents zoom on iOS */
-            }
-            
-            /* CTA section adjustments */
-            .cta-section {
-                padding: 60px 0;
-            }
-            
-            .cta-section h2 {
-                font-size: 1.8rem;
-            }
-            
-            .cta-section p {
-                font-size: 1rem;
-                padding: 0 15px;
-            }
-            
-            /* Footer adjustments */
-            .footer {
-                padding: 40px 0 20px;
-            }
-            
-            .footer h5 {
-                font-size: 1.1rem;
-            }
-            
-            /* Navigation adjustments */
-            .navbar-light .navbar-nav .nav-link {
-                font-size: 1rem;
-                margin: 5px 0;
-                text-align: center;
-            }
-            
-            .navbar-collapse {
-                background-color: var(--white);
-                padding: 15px;
-                border-radius: 8px;
-                box-shadow: var(--shadow-medium);
-                margin-top: 10px;
-            }
-            
-            /* Mobile-specific utility classes */
-            .mobile-sticky-cart {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: var(--white);
-                padding: 15px;
-                box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
-                z-index: 1000;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            
-            .mobile-cart-total {
-                font-weight: 700;
-                font-size: 1.1rem;
-                color: var(--primary-red);
-            }
-            
-            /* Mobile menu grid adjustments */
-            .menu-category .row {
-                margin-left: -8px;
-                margin-right: -8px;
-            }
-            
-            .menu-category .col-md-6 {
-                padding-left: 8px;
-                padding-right: 8px;
-            }
-            
-            /* Improved touch targets */
-            .add-to-cart, .quantity-btn, .delivery-option {
-                min-height: 44px; /* Apple's recommended minimum touch target */
-            }
-            
-            /* Social sharing buttons stack on mobile */
-            .social-sharing {
-                flex-direction: column;
-            }
-            
-            /* Delivery options stack on mobile */
-            .delivery-options {
-                flex-direction: column;
-            }
+            .menu-hero { padding: 100px 0 60px; }
+            .menu-hero h1 { font-size: 2.2rem; line-height: 1.2; }
+            .menu-hero p { font-size: 1.1rem; padding: 0 15px; }
+            .menu-section { padding: 50px 0; }
+            .section-title h2 { font-size: 1.8rem; }
+            .section-title p { font-size: 1rem; padding: 0 15px; }
+            .category-title { font-size: 1.6rem; margin-bottom: 25px; }
+            .menu-item { margin-bottom: 20px; }
+            .item-image-container { height: 180px; }
+            .item-content { padding: 15px; }
+            .item-name { font-size: 1.2rem; }
+            .item-price { font-size: 1.1rem; }
+            .item-description { font-size: 0.9rem; }
+            .btn-pastry { padding: 14px 20px; font-size: 0.9rem; width: 100%; }
+            .cart-sidebar { width: 100%; max-width: 100%; padding: 15px; }
+            .cart-item { padding: 12px 0; }
+            .cart-total { font-size: 1.2rem; margin: 15px 0; }
+            .payment-content { width: 95%; padding: 20px; margin: 10px; }
+            .payment-header h3 { font-size: 1.4rem; }
+            .form-control { padding: 14px; font-size: 16px; }
+            .cta-section { padding: 60px 0; }
+            .cta-section h2 { font-size: 1.8rem; }
+            .cta-section p { font-size: 1rem; padding: 0 15px; }
+            .footer { padding: 40px 0 20px; }
+            .footer h5 { font-size: 1.1rem; }
+            .navbar-light .navbar-nav .nav-link { font-size: 1rem; margin: 5px 0; text-align: center; }
+            .navbar-collapse { background-color: var(--white); padding: 15px; border-radius: 8px; box-shadow: var(--shadow-medium); margin-top: 10px; }
+            .mobile-sticky-cart { position: fixed; bottom: 0; left: 0; right: 0; background: var(--white); padding: 15px; box-shadow: 0 -5px 15px rgba(0,0,0,0.1); z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+            .mobile-cart-total { font-weight: 700; font-size: 1.1rem; color: var(--primary-red); }
+            .menu-category .row { margin-left: -8px; margin-right: -8px; }
+            .menu-category .col-md-6 { padding-left: 8px; padding-right: 8px; }
+            .add-to-cart, .quantity-btn, .delivery-option { min-height: 44px; }
+            .social-sharing { flex-direction: column; }
+            .delivery-options { flex-direction: column; }
         }
 
         @media (max-width: 480px) {
-            .menu-hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.6rem;
-            }
-            
-            .category-title {
-                font-size: 1.4rem;
-            }
-            
-            .item-image-container {
-                height: 160px;
-            }
-            
-            .cart-sidebar {
-                padding: 12px;
-            }
+            .menu-hero h1 { font-size: 1.8rem; }
+            .section-title h2 { font-size: 1.6rem; }
+            .category-title { font-size: 1.4rem; }
+            .item-image-container { height: 160px; }
+            .cart-sidebar { padding: 12px; }
         }
 
-        /* Additional mobile-specific improvements */
         .mobile-cart-indicator {
             position: fixed;
             top: 80px;
@@ -880,7 +812,6 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
-        /* Improved mobile navigation */
         .navbar-toggler {
             border: none;
             padding: 5px 10px;
@@ -890,12 +821,10 @@
             outline: none;
         }
         
-        /* Mobile-optimized form elements */
         input, select, textarea {
-            font-size: 16px !important; /* Prevents zoom on iOS */
+            font-size: 16px !important;
         }
         
-        /* Enhanced mobile animations */
         @keyframes slideUp {
             from { transform: translateY(100%); }
             to { transform: translateY(0); }
@@ -905,9 +834,18 @@
             animation: slideUp 0.3s ease;
         }
         
-        /* Improved scrolling on mobile */
         .menu-section {
             -webkit-overflow-scrolling: touch;
+        }
+
+        /* Bounce animation for cart */
+        .bounce {
+            animation: bounce 0.3s ease;
+        }
+        @keyframes bounce {
+            0%, 20%, 60%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            80% {transform: translateY(-5px);}
         }
     </style>
 </head>
@@ -998,6 +936,11 @@
                 </div>
                 
                 <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
                     <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" class="form-control" required>
                 </div>
@@ -1028,12 +971,34 @@
                     <textarea id="specialRequests" class="form-control" rows="3" placeholder="Any special instructions or dietary requirements"></textarea>
                 </div>
                 
+                <!-- Stripe Payment Form -->
+                <div class="stripe-payment-form">
+                    <h5>Payment Information</h5>
+                    <div id="card-element" class="stripe-element">
+                        <!-- Stripe Elements will create form elements here -->
+                    </div>
+                    <div id="card-errors" role="alert" style="color: #fa755a; margin-bottom: 15px;"></div>
+                    <button type="submit" id="stripe-payment-btn" class="stripe-payment-btn">
+                        <span id="button-text">Pay $<span id="stripe-total">0.00</span></span>
+                        <span id="button-spinner" class="spinner" style="display: none;"></span>
+                    </button>
+                </div>
+                
+                <!-- Invoice Success Message (Initially Hidden) -->
+                <div id="invoice-success" class="invoice-success" style="display: none;">
+                    <h4>Payment Successful!</h4>
+                    <p>Your order has been processed and an invoice has been generated.</p>
+                    <p>You will receive an email with your invoice shortly.</p>
+                    <a href="#" id="invoice-link" class="invoice-link" target="_blank">View Your Invoice</a>
+                </div>
+                
+                <!-- UPDATED: Pink and White Social Sharing Buttons -->
                 <div class="social-sharing">
                     <a href="#" id="whatsappOrder" class="social-btn whatsapp-btn" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Order via WhatsApp & Make Payment 
+                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
                     </a>
                     <a href="#" id="instagramOrder" class="social-btn instagram-btn" target="_blank">
-                        <i class="fab fa-instagram"></i> Order via Instagram & Make Payment 
+                        <i class="fab fa-instagram"></i> Order via Instagram
                     </a>
                 </div>
             </form>
@@ -1041,17 +1006,7 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="menu-hero">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1>Authentic African Pastries</h1>
-                    <p>Handcrafted with traditional recipes and premium ingredients. Experience the rich flavors of Nigeria right here in Toronto.</p>
-                    <a href="#menu" class="btn btn-outline-pastry btn-lg">View Our Menu</a>
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
     <!-- Menu Section -->
     <section class="menu-section" id="menu">
@@ -1061,7 +1016,8 @@
                 <p>Discover our premium selection of authentic Nigerian pastries and smallchops</p>
             </div>
 
-            <div class="menu-category">
+       
+                        <div class="menu-category">
                 <h3 class="category-title">Savory Pastries 🥟</h3>
                 <div class="row">
                     <div class="col-md-6 col-lg-4">
@@ -1325,7 +1281,7 @@
                 </div>
             </div>
             
-           <div class="menu-category">
+            <div class="menu-category">
                 <h3 class="category-title">Refreshing Drinks 🍹</h3>
                 <div class="row">
                     <div class="col-md-6 col-lg-4">
@@ -1438,17 +1394,7 @@
         </div>
     </section>
     
-    <section class="cta-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2>Ready to Taste Authentic African Luxury?</h2>
-                    <p>Place your order now and experience the rich flavors of Nigeria right here in Toronto. Freshly made with traditional recipes and premium ingredients.</p>
-                    <button id="ctaCheckout" class="btn btn-pastry btn-lg" disabled>Order Now</button>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -1504,6 +1450,7 @@
     <script>
         // Cart state
         let cart = [];
+        let stripe, cardElement;
 
         // DOM Ready
         $(document).ready(function() {
@@ -1514,6 +1461,7 @@
             setupEventListeners();
             updateCartDisplay();
             checkMobileView();
+            initializeStripe();
         }
 
         function setupEventListeners() {
@@ -1555,6 +1503,9 @@
                 submitOrder('instagram');
             });
 
+            // Payment form submission
+            $('#paymentForm').on('submit', handlePaymentFormSubmit);
+
             // Navbar scroll effect
             $(window).scroll(function() {
                 if ($(this).scrollTop() > 100) {
@@ -1588,6 +1539,40 @@
 
             // Window resize handler for mobile view
             $(window).on('resize', checkMobileView);
+        }
+
+        function initializeStripe() {
+            // Initialize Stripe with your publishable key
+            stripe = Stripe('pk_live_51SRiH142lwkmf1uVeBT4ITFRUa5h4hiJlo4UDyMAiwjKDQNCEnsdK4SIpflWXyczm9sox3VRBy5swR94KTF0ynEm007kli10JT');
+            
+            // Create an instance of Elements
+            const elements = stripe.elements();
+            
+            // Create card element
+            cardElement = elements.create('card', {
+                style: {
+                    base: {
+                        fontSize: '16px',
+                        color: '#32325d',
+                        '::placeholder': {
+                            color: '#aab7c4'
+                        }
+                    }
+                }
+            });
+            
+            // Mount card element to the DOM
+            cardElement.mount('#card-element');
+            
+            // Handle real-time validation errors from the card Element
+            cardElement.on('change', function(event) {
+                const displayError = document.getElementById('card-errors');
+                if (event.error) {
+                    displayError.textContent = event.error.message;
+                } else {
+                    displayError.textContent = '';
+                }
+            });
         }
 
         function checkMobileView() {
@@ -1654,6 +1639,7 @@
             $('#cartTotal').text(formattedTotal);
             $('#mobileStickyTotal').text(formattedTotal);
             $('#mobileStickyCount').text(cartCount + (cartCount === 1 ? ' item' : ' items'));
+            $('#stripe-total').text(formattedTotal);
             
             // Enable/disable checkout buttons based on cart content
             const hasItems = cart.length > 0;
@@ -1747,12 +1733,15 @@
             }, 300);
         }
 
-        function submitOrder(platform) {
+        async function handlePaymentFormSubmit(e) {
+            e.preventDefault();
+            
             if (cart.length === 0) return;
             
             // Collect form data
             const customerInfo = {
                 name: $('#name').val(),
+                email: $('#email').val(),
                 phone: $('#phone').val(),
                 deliveryMethod: $('input[name="deliveryMethod"]:checked').val(),
                 address: $('#address').val(),
@@ -1760,8 +1749,124 @@
             };
             
             // Validate required fields
-            if (!customerInfo.name || !customerInfo.phone) {
-                alert('Please fill in all required fields: Name and Phone Number');
+            if (!customerInfo.name || !customerInfo.email || !customerInfo.phone) {
+                alert('Please fill in all required fields: Name, Email, and Phone Number');
+                return;
+            }
+            
+            if (customerInfo.deliveryMethod === 'delivery' && !customerInfo.address) {
+                alert('Please provide a delivery address');
+                return;
+            }
+            
+            // Show loading state
+            const submitButton = $('#stripe-payment-btn');
+            const buttonText = $('#button-text');
+            const buttonSpinner = $('#button-spinner');
+            
+            submitButton.prop('disabled', true);
+            buttonText.hide();
+            buttonSpinner.show();
+            
+            try {
+                // Create a payment intent on the server
+                const paymentIntent = await createPaymentIntent();
+                
+                // Confirm the payment with Stripe
+                const result = await stripe.confirmCardPayment(paymentIntent.client_secret, {
+                    payment_method: {
+                        card: cardElement,
+                        billing_details: {
+                            name: customerInfo.name,
+                            email: customerInfo.email,
+                            phone: customerInfo.phone,
+                        },
+                    }
+                });
+                
+                if (result.error) {
+                    // Show error to customer
+                    const errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+                    submitButton.prop('disabled', false);
+                    buttonText.show();
+                    buttonSpinner.hide();
+                } else {
+                    // Payment succeeded
+                    await createInvoice(paymentIntent.id, customerInfo);
+                    
+                    // Show success message
+                    $('#invoice-success').show();
+                    $('#stripe-payment-btn').hide();
+                    
+                    // Clear the cart
+                    cart = [];
+                    updateCartDisplay();
+                }
+            } catch (error) {
+                console.error('Payment error:', error);
+                alert('An error occurred while processing your payment. Please try again.');
+                submitButton.prop('disabled', false);
+                buttonText.show();
+                buttonSpinner.hide();
+            }
+        }
+
+        async function createPaymentIntent() {
+            // Calculate total amount
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            // In a real implementation, you would make a request to your server
+            // For this example, we'll simulate the server response
+            return new Promise((resolve) => {
+                // Simulate API call delay
+                setTimeout(() => {
+                    resolve({
+                        id: 'pi_' + Math.random().toString(36).substr(2, 9),
+                        client_secret: 'pi_' + Math.random().toString(36).substr(2, 9) + '_secret_' + Math.random().toString(36).substr(2, 9),
+                        amount: total,
+                        currency: 'cad'
+                    });
+                }, 1000);
+            });
+        }
+
+        async function createInvoice(paymentIntentId, customerInfo) {
+            // In a real implementation, you would make a request to your server
+            // to create an invoice in Stripe
+            return new Promise((resolve) => {
+                // Simulate API call delay
+                setTimeout(() => {
+                    const invoiceId = 'in_' + Math.random().toString(36).substr(2, 9);
+                    
+                    // Update the invoice link
+                    $('#invoice-link').attr('href', `https://dashboard.stripe.com/test/invoices/${invoiceId}`);
+                    
+                    resolve({
+                        id: invoiceId,
+                        hosted_invoice_url: `https://dashboard.stripe.com/test/invoices/${invoiceId}`,
+                        invoice_pdf: `https://dashboard.stripe.com/test/invoices/${invoiceId}/pdf`
+                    });
+                }, 1000);
+            });
+        }
+
+        function submitOrder(platform) {
+            if (cart.length === 0) return;
+            
+            // Collect form data
+            const customerInfo = {
+                name: $('#name').val(),
+                email: $('#email').val(),
+                phone: $('#phone').val(),
+                deliveryMethod: $('input[name="deliveryMethod"]:checked').val(),
+                address: $('#address').val(),
+                specialRequests: $('#specialRequests').val()
+            };
+            
+            // Validate required fields
+            if (!customerInfo.name || !customerInfo.email || !customerInfo.phone) {
+                alert('Please fill in all required fields: Name, Email, and Phone Number');
                 return;
             }
             
@@ -1774,6 +1879,7 @@
             let message = `🍽️ *NEW ORDER FROM C PASTRIES WEBSITE* 🍽️%0A%0A`;
             message += `*Customer Information:*%0A`;
             message += `Name: ${customerInfo.name}%0A`;
+            message += `Email: ${customerInfo.email}%0A`;
             message += `Phone: ${customerInfo.phone}%0A`;
             message += `Delivery Method: ${customerInfo.deliveryMethod === 'delivery' ? 'Delivery' : 'Pickup'}%0A`;
             
@@ -1808,26 +1914,7 @@
             
             // Open in new tab
             window.open(url, '_blank');
-            
-            // Optionally clear the cart after order is sent
-            // cart = [];
-            // updateCartDisplay();
-            // closePaymentModal();
         }
-
-        // Add bounce animation to CSS
-        const style = document.createElement('style');
-        style.textContent = `
-            .bounce {
-                animation: bounce 0.3s ease;
-            }
-            @keyframes bounce {
-                0%, 20%, 60%, 100% {transform: translateY(0);}
-                40% {transform: translateY(-10px);}
-                80% {transform: translateY(-5px);}
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
