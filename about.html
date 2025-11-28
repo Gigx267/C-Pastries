@@ -3,519 +3,217 @@
 
 <head>
     <meta charset="utf-8">
-    <title>About Us - C Pastries: Authentic African Luxury</title>
+    <title>C Pastries - Premium Toronto Smallchops</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Our story, mission, and dedication to crafting premium, authentic Nigerian and African smallchops in Toronto." name="description">
-    <meta name="keywords" content="Nigerian pastries, African smallchops, Toronto bakery, authentic African food, Nigerian snacks">
+    <meta content="C Pastries, Toronto Smallchops, Nigerian Pastries, n Snacks" name="keywords">
+    <meta content="Premium Toronto smallchops crafted with authentic recipes and the finest ingredients" name="description">
 
+    <!-- Favicon -->
     <link href="logo.jpg" rel="icon">
 
+    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
+    <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!--Animate csss Libariries -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     
     <style>
-        /* ===== CSS VARIABLES ===== */
-        :root {
-            --primary-gold: #f9a392;
-            --primary-dark: #2c2c2c;
-            --accent-gold: #c19b2e;
-            --light-cream: #f8f5f2;
-            --medium-cream: #f5f1eb;
-            --white: #ffffff;
-            --text-dark: #333333;
-            --text-muted: #6c757d;
-            --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.05);
-            --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --shadow-gold: 0 8px 25px rgba(212, 175, 55, 0.2);
-            --transition: all 0.3s ease;
-            --border-radius: 10px;
-        }
-
-        /* ===== GLOBAL STYLES ===== */
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            color: var(--text-dark);
-        }
-
-        .pastry-primary {
-            color: var(--primary-gold);
-        }
-
-        .bg-pastry-primary {
-            background-color: var(--primary-gold);
-        }
-
-        .border-pastry-primary {
-            border-color: var(--primary-gold) !important;
-        }
-
+        
+        /* Additional custom styles for C Pastries */
         .pastry-bg {
-            background-color: var(--light-cream);
+            background-color: #f8f5f2;
         }
-
+        .pastry-primary {
+            color: #ef78b3; /* Changed to pink */
+        }
+        .bg-pastry-primary {
+            background-color: #ef78b3; /* Changed to pink */
+        }
+        .border-pastry-primary {
+            border-color: #ef78b3 !important; /* Changed to pink */
+        }
         .btn-pastry {
-            background-color: var(--primary-gold);
-            border-color: var(--primary-gold);
-            color: var(--primary-dark);
-            font-weight: 500;
-            padding: 12px 30px;
-            border-radius: 30px;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
+            background-color: #ef78b3; /* Changed to pink */
+            border-color: #ef78b3; /* Changed to pink */
+            color: white;
         }
-
-        .btn-pastry:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: all 0.6s;
-            z-index: -1;
-        }
-
         .btn-pastry:hover {
-            background-color: var(--accent-gold);
-            border-color: var(--accent-gold);
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: #ff1493; /* Darker pink on hover */
+            border-color: #ff1493; /* Darker pink on hover */
+            color: white;
         }
-
-        .btn-pastry:hover:before {
-            left: 100%;
+        .pastry-counter {
+            color: #ef78b3; /* Changed to pink */
         }
-
         .pastry-section-title {
             position: relative;
-            margin-bottom: 40px;
-            padding-bottom: 15px;
+            margin-bottom: 30px;
         }
-
         .pastry-section-title:after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -10px;
             left: 0;
             width: 60px;
             height: 3px;
-            background-color: var(--primary-gold);
+            background-color: #ef78b3; /* Changed to pink */
         }
-
-        .pastry-section-title.text-center:after {
+        .pastry-item {
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .pastry-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        
+        /* Popular Items Gallery Styles */
+        .popular-items-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        .popular-items-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #333;
+            position: relative;
+        }
+        .popular-items-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #ef78b3; /* Changed to pink */
         }
-
-        .section-padding {
-            padding: 80px 0;
-        }
-
-        /* ===== HEADER & NAVIGATION ===== */
-        .top-bar {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            padding: 8px 0;
-            font-size: 0.9rem;
-        }
-
-        .top-bar a {
-            color: var(--white);
-            transition: var(--transition);
-        }
-
-        .top-bar a:hover {
-            color: var(--primary-gold);
-        }
-
-        .navbar {
-            padding: 15px 0;
-            transition: var(--transition);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .navbar.scrolled {
-            padding: 10px 0;
-            background-color: var(--white) !important;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .navbar-brand img {
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            transition: var(--transition);
-        }
-
-        .navbar-nav .nav-link {
-            color: var(--text-dark) !important;
-            font-weight: 500;
-            padding: 10px 15px !important;
-            margin: 0 5px;
+        .popular-item {
             position: relative;
-            transition: var(--transition);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
         }
-
-        .navbar-nav .nav-link:before {
-            content: '';
+        .popular-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        .popular-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .popular-item-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-gold);
-            transition: var(--transition);
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
         }
-
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: var(--primary-gold) !important;
+        .popular-item:hover .popular-item-overlay {
+            transform: translateY(0);
         }
-
-        .navbar-nav .nav-link:hover:before,
-        .navbar-nav .nav-link.active:before {
-            width: 100%;
+        .popular-item-name {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
         }
-
-        /* ===== HERO SECTION ===== */
-        .about-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./bvv\ \(1\).jpg) center center no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            position: relative;
+        .popular-item-price {
+            color: #ef78b3; /* Changed to pink */
+            font-weight: bold;
+        }
+        
+        /* Custom Order Section Styles */
+        .custom-order-section {
+            background-color: #f8f5f2;
+            padding: 40px 0;
             text-align: center;
+            margin: 40px 0;
         }
-
-        .about-hero h1 {
-            font-size: 3.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        .custom-order-text {
+            font-size: 1.2rem;
             margin-bottom: 20px;
         }
-
-        .breadcrumb-nav {
-            font-size: 1rem;
+        .whatsapp-btn {
+            background-color: #ef78b3; /* Changed to pink */
+            border-color: #ef78b3; /* Changed to pink */
+            color: white;
+            margin-right: 10px;
         }
-
-        .breadcrumb-nav a {
-            color: var(--white);
-            transition: var(--transition);
+        .whatsapp-btn:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+            border-color: #ff1493; /* Darker pink on hover */
+            color: white;
         }
-
-        .breadcrumb-nav a:hover {
-            color: var(--primary-gold);
+        .instagram-btn {
+            background-color: #ef78b3; /* Changed to pink */
+            border-color: #ef78b3; /* Changed to pink */
+            color: white;
         }
-
-        /* ===== STORY SECTION ===== */
-        .story-section {
-            background-color: var(--white);
-            position: relative;
-        }
-
-        .story-img-container {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-medium);
-            position: relative;
-        }
-
-        .story-img-container:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.1) 100%);
-            z-index: 1;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .story-img-container:hover:before {
-            opacity: 1;
-        }
-
-        .story-img-container img {
-            transition: transform 0.8s ease;
-            width: 100%;
-        }
-
-        .story-img-container:hover img {
-            transform: scale(1.05);
-        }
-
-        .story-tag {
-            display: inline-block;
-            background-color: rgba(212, 175, 55, 0.1);
-            color: var(--primary-gold);
-            padding: 5px 15px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-
-        .story-content {
-            padding: 30px;
-            border-radius: var(--border-radius);
-            background-color: var(--medium-cream);
-            box-shadow: var(--shadow-light);
-        }
-
-        /* ===== VALUES SECTION ===== */
-        .values-section {
-            background-color: var(--light-cream);
-            position: relative;
-        }
-
-        .value-card {
-            background: var(--white);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: var(--border-radius);
-            padding: 40px 30px;
-            text-align: center;
-            transition: var(--transition);
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .value-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background-color: var(--primary-gold);
-            transform: scaleX(0);
-            transition: var(--transition);
-        }
-
-        .value-card:hover {
-            box-shadow: var(--shadow-gold);
-            transform: translateY(-10px);
-        }
-
-        .value-card:hover:before {
-            transform: scaleX(1);
-        }
-
-        .value-card i {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--primary-gold);
-            transition: var(--transition);
-        }
-
-        .value-card:hover i {
-            transform: scale(1.1);
-        }
-
-        .value-card h5 {
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            position: relative;
-        }
-
-        .footer:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background-color: var(--primary-gold);
-        }
-
-        .footer h5 {
-            color: var(--white);
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer h5:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--primary-gold);
-        }
-
-        .footer a {
-            color: rgba(255,255,255,0.7);
-            transition: var(--transition);
-        }
-
-        .footer a:hover {
-            color: var(--primary-gold);
-            text-decoration: none;
-        }
-
-        .footer .btn-social {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(255,255,255,0.1);
-            transition: var(--transition);
-        }
-
-        .footer .btn-social:hover {
-            background-color: var(--primary-gold);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            background-color: rgba(0,0,0,0.2);
-            padding: 20px 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* ===== BACK TO TOP ===== */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--primary-gold);
-            color: var(--primary-dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background-color: var(--accent-gold);
-            color: var(--white);
-            transform: translateY(-3px);
-        }
-
-        /* ===== RESPONSIVE STYLES ===== */
-        @media (max-width: 991.98px) {
-            .about-hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-padding {
-                padding: 60px 0;
-            }
-            
-            .navbar-nav .nav-link {
-                padding: 8px 0 !important;
-                margin: 0;
-            }
-        }
-
-        @media (max-width: 767.98px) {
-            .about-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .section-padding {
-                padding: 40px 0;
-            }
-            
-            .value-card {
-                margin-bottom: 30px;
-            }
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease forwards;
+        .instagram-btn:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+            border-color: #ff1493; /* Darker pink on hover */
+            color: white;
         }
     </style>
 </head>
 
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar d-none d-lg-block">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="d-inline-flex align-items-center">
-                        <small><i class="fa fa-phone-alt mr-2"></i>+1 (289) 273-4930</small>
-                        <small class="px-3">|</small>
-                        <small><i class="fa fa-envelope mr-2"></i>cspastries3@gmail.com</small>
-                    </div>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light d-none d-lg-block">
+        <div class="row py-2 px-lg-5">
+            <div class="col-lg-6 text-left mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center">
+                    <small><i class="fa fa-phone-alt mr-2"></i>+1 (289) 273-4930</small>
+                    <small class="px-3">|</small>
+                    <small><i class="fa fa-envelope mr-2"></i>cspastries3@gmail.com</small>
                 </div>
-                <div class="col-md-6 text-right">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="px-2" href="https://www.instagram.com/cpastriess/">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a class="px-2" href="https://www.instagram.com/cpastriess/">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="px-2" href="https://www.instagram.com/cpastriess/">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
+            </div>
+            <div class="col-lg-6 text-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-primary px-2" href="https://www.instagram.com/cpastriess/">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-primary px-2" href="https://www.instagram.com/cpastriess/">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-primary px-2" href="https://www.instagram.com/cpastriess/">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-  <div class="container-fluid p-0">
+    <!-- Topbar End -->
+
+   <div class="container-fluid p-0">
     <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
         <a href="index.html" class="navbar-brand ml-lg-3 d-flex align-items-center">
             <img style="height: 2cm; border-radius: 50%; opacity: 80%;" src="logo.jpg" alt="Bakery Logo" srcset="">
-            <span style="font-size: 1.5rem; font-weight: bold; color: #f9a392; margin-left: 0.5rem; line-height: 1;">
+            <span style="font-size: 1.5rem; font-weight: bold; color: #ef78b3; margin-left: 0.5rem; line-height: 1;">
                 C Pastries
             </span>
         </a>
@@ -527,164 +225,915 @@
                 <a href="index.html" class="nav-item nav-link active">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
                 <a href="menu.html" class="nav-item nav-link"> View Menu</a>
-                
+                   <a href="Questions.html" class="nav-item nav-link"> F&A</a>
                 <a href="contact.html" class="nav-item nav-link">Contact Us </a>
             </div>
-            <a href="order.html" class="btn btn-primary d-none d-lg-block">Order Now</a>
+            <a href="menu.html" class="btn btn-primary d-none d-lg-block" style="background-color: #ef78b3; border-color: #ef78b3;">Order Now</a>
         </div>
     </nav>
 </div>
-    <!-- Hero Section -->
-    <div class="about-hero">
+   
+   
+
+ <!-- Custom Order Section -->
+   
+
+  
+
+   <div class="container-fluid py-5 about-section-pro">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            
+            <div class="col-lg-6 pb-5 pb-lg-0 video-column">
+                <div class="video-container">
+                    <video class="about-video" playsinline autoplay loop muted poster="cp (6).jpg">
+                        <source src="vvv.mp4" type="video/mp4">
+                        <source src="vvv.mp4" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div class="col-lg-6 content-column">
+                <h6 class="d-inline-block text-primary text-uppercase bg-light py-1 px-2 mb-3" style="color: #ef78b3;">
+                    ✨ Our Passion
+                </h6>
+                <h1 class="mb-4 display-5 fw-bold">
+                    The Art of Premium  Smallchops ✨
+                </h1>
+                
+                <p class="mb-3">
+                    C Pastries is Toronto's premier destination for authentic smallchops and pastries.
+                    Our talented bakers craft traditional recipes using only the highest quality ingredients.
+                </p>
+                
+                <p class="mb-3">
+                    From our flaky meat pies to our perfectly fluffy puff puff, each item is made with
+                     care and attention to detail.
+                    We're dedicated to giving you the best pastry experience with authentic flavors.
+                </p>
+                
+                <p class="mb-5">
+                    Come visit us, place your order, and let us take care of your cravings.
+                    C Pastries is where you need to be for authentic, delicious  snacks in 
+                    the Greater Toronto Area.
+                </p>
+                
+                <!-- Removed statistics section -->
+            </div>
+        </div>
+    </div>
+</div>
+<style> 
+    /* --- Professional About Section Styling --- */
+
+/* 1. Overall Section & Background */
+.about-section-pro {
+    background-color: #f8f9fa; /* Light gray background for contrast */
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* 2. Video Container Styling */
+.video-column {
+    /* Ensures the video column is positioned relative to its content for safety */
+    position: relative;
+    padding: 0 15px;
+}
+
+.video-container {
+    /* Create a 16:9 aspect ratio wrapper for the video */
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+    height: 200%;
+    overflow: hidden;
+    /* Add smooth, rounded edges and a slight shadow for a pro look */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video fills the container without stretching */
+}
+
+/* 3. Content Column Enhancements */
+.content-column h1 {
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.content-column p {
+    line-height: 1.8;
+    color: #555;
+    /* Remove the old 'pl-4 border-left border-primary' if you want a cleaner look.
+       If you want to keep a subtle divider, update the border style: */
+    border-left: 3px solid #ef78b3; /* Changed to pink */
+    padding-left: 1rem;
+}
+
+/* 4. Stats Box Enhancement */
+.stat-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+    /* Optional: Add a subtle hover effect */
+}
+
+.stat-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 992px) {
+    /* On smaller screens, allow the video to take up full width 
+       and add spacing between the video and content */
+    .video-column {
+        margin-bottom: 2rem;
+    }
+
+    .video-container {
+        /* Adjust padding for a slightly shorter height on mobile */
+        padding-bottom: 65%; 
+    }
+}
+</style>
+
+     
+    <style>
+        /* ===== CSS VARIABLES - Pink & White Theme ===== */
+        :root {
+            --primary-pink: #ef78b3; /* Hot pink */
+            --primary-dark: #1a1a1a; /* Deep black for text */
+            --accent-pink: #ffb6c1; /* Light pink for highlights */
+            --light-cream: #fff5f9; /* Light pink background */
+            --medium-cream: #ffe4ec; /* Medium pink for sections */
+            --white: #ffffff;
+            --text-dark: #2c2c2c;
+            --text-light: #f8f5f2;
+            --text-muted: #7a7a7a;
+            --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.15);
+            --shadow-pink: 0 4px 15px rgba(255, 105, 180, 0.4);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+
+        /* ===== GLOBAL STYLES - Bold & Vibrant ===== */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .pastry-primary {
+            color: var(--primary-pink);
+        }
+
+        .pastry-red {
+            color: var(--primary-pink);
+        }
+
+        /* ===== BUTTONS - Bold & Eye-catching ===== */
+        .btn-pastry {
+            background-color: var(--primary-pink);
+            border: 2px solid var(--primary-pink);
+            color: var(--white);
+            font-weight: 700;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-pastry:hover {
+            background-color: transparent;
+            color: var(--primary-pink);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-pink);
+        }
+
+        .btn-outline-pastry {
+            background-color: transparent;
+            border: 2px solid var(--primary-pink);
+            color: var(--primary-pink);
+            font-weight: 700;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .btn-outline-pastry:hover {
+            background-color: var(--primary-pink);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* ===== HEADER & NAVIGATION - Simplified & Bold ===== */
+        .navbar {
+            padding: 15px 0;
+            transition: padding var(--transition), background-color var(--transition), box-shadow var(--transition);
+            box-shadow: none;
+            background-color: var(--white) !important;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(4px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .navbar-light .navbar-nav .nav-link {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            margin: 0 10px;
+        }
+        
+        .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link.active {
+            color: var(--primary-pink);
+        }
+
+        /* ===== HERO SECTION - Bold & Appetizing ===== */
+        .menu-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./bg3.webp') center/cover no-repeat;
+            color: var(--white);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .menu-hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* ===== MENU SECTION - Vibrant & Appetizing ===== */
+        .menu-section {
+            background-color: var(--light-cream);
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-pink);
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .menu-category {
+            margin-bottom: 80px;
+        }
+
+        .category-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-pink);
+            display: inline-block;
+        }
+
+        .menu-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            height: 100%;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .item-image-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .item-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-item:hover .item-image {
+            transform: scale(1.1);
+        }
+
+        .item-content {
+            padding: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .item-name {
+            font-size: 1.4rem;
+            margin-bottom: 0;
+            color: var(--primary-dark);
+            flex: 1;
+        }
+
+        .item-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-pink);
+            margin-left: 15px;
+        }
+
+        .item-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .item-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .option-tag {
+            background-color: var(--medium-cream);
+            color: var(--text-dark);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .special-item {
+            border: 3px solid var(--primary-pink);
+        }
+
+        .special-badge {
+            background-color: var(--primary-pink);
+            color: var(--white);
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            z-index: 3;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-pink);
+        }
+
+        /* ===== CART STYLES - FIXED ===== */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 380px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: var(--shadow-medium);
+            transition: right 0.3s ease;
+            z-index: 1050;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1040;
+            display: none;
+        }
+
+        .cart-overlay.show {
+            display: block;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-price {
+            color: var(--primary-pink);
+            font-weight: 700;
+        }
+
+        .cart-quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            background: var(--primary-pink);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-total {
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 20px 0;
+            color: var(--primary-dark);
+        }
+
+        /* ===== PAYMENT MODAL ===== */
+        .payment-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .payment-modal.show {
+            display: flex;
+        }
+
+        .payment-content {
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .payment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .payment-header h3 {
+            margin: 0;
+            color: var(--primary-dark);
+        }
+
+        .close-payment {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .payment-form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-pink);
+            outline: none;
+        }
+
+        .payment-summary {
+            background-color: var(--light-cream);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .payment-summary h4 {
+            margin-top: 0;
+            color: var(--primary-dark);
+        }
+
+        .payment-summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .payment-total {
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+        /* ===== CTA SECTION - Bold & Urgent ===== */
+        .cta-section {
+            background: linear-gradient(rgba(255, 105, 180, 0.9), rgba(255, 105, 180, 0.9)), url('cta-bg.jpg') center/cover no-repeat;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 2.8rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .btn-pastry {
+            background-color: var(--white);
+            border-color: var(--white);
+            color: var(--primary-pink);
+        }
+
+        .cta-section .btn-pastry:hover {
+            background-color: transparent;
+            color: var(--white);
+            border-color: var(--white);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 60px 0 30px;
+        }
+
+        .footer h5 {
+            color: var(--primary-pink);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer a {
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--primary-pink);
+            text-decoration: none;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-pink);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* ===== LOADING SPINNER ===== */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ===== RESPONSIVE ADJUSTMENTS - FIXED ===== */
+        @media (max-width: 768px) {
+            .menu-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .category-title {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-light .navbar-nav .nav-link {
+                font-size: 1rem;
+                margin: 5px 0;
+            }
+            
+            .cart-sidebar {
+                width: 320px;
+                max-width: 85vw;
+            }
+            
+            .payment-content {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cart-sidebar {
+                width: 280px;
+                max-width: 90vw;
+            }
+        }
+
+        /* ===== DELIVERY OPTIONS ===== */
+        .delivery-options {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .delivery-option {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .delivery-option.selected {
+            border-color: var(--primary-pink);
+            background-color: rgba(255, 105, 180, 0.1);
+        }
+
+        .delivery-option input {
+            display: none;
+        }
+
+        .delivery-fields {
+            display: none;
+        }
+
+        .delivery-fields.show {
+            display: block;
+        }
+
+        /* ===== SOCIAL SHARING BUTTONS ===== */
+        .social-sharing {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .whatsapp-btn {
+            background-color: var(--primary-pink);
+            color: white;
+        }
+
+        .instagram-btn {
+            background-color: var(--primary-pink);
+            color: white;
+        }
+
+        .social-btn:hover {
+            background-color: #ff1493;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    
+
+
+  
+   
+   
+
+    
+    
+  
+
+   
+
+  
+   
+
+
+ 
+
+
+
+
+
+            </script>
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <h1 style="color: #fbf9fb;" class="animate-fade-in-up">NO 1  SmallChops Vendor</h1>
-                    <div class="breadcrumb-nav animate-fade-in-up" style="animation-delay: 0.2s">
-                        <a href="index.html">Home</a> / <span class="pastry-primary">About Us</span>
+                <div class="col-lg-8 text-center">
+                    <h2>Ready to Taste Cpastries</h2>
+                    <p>Place your order now and experience the rich
+                         freshly made with traditional recipes and premium ingredients.</p>
+                    <a href="menu.html" class="btn btn-pastry btn-lg">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Start -->
+    <div class="footer container-fluid position-relative bg-dark py-5" style="margin-top: 90px;">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-lg-6 pr-lg-5 mb-5">
+                    <a href="index.html" class="navbar-brand">
+                        <h1 class="mb-3 text-white"><span class="text-primary"></span>C Pastries</h1>
+                    </a>
+                    <p>
+                        Our goal is to help you experience authentic n flavors that reflect traditional recipes and premium ingredients. 
+                        We offer a wide range of pastries and smallchops, and our bakers stay true to traditional techniques while providing 
+                        you with top-notch service in a warm and inviting atmosphere.
+                    </p>
+                    <p><i class="fa fa-phone-alt mr-2"></i>+1 (289) 273-4930</p>
+                    <p><i class="fa fa-envelope mr-2"></i>cspastries3@gmail.com</p>
+                    <div class="d-flex justify-content-start mt-4">
+                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="https://www.instagram.com/cpastriess/ "><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="https://www.instagram.com/cpastriess/ "><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square" href="https://www.instagram.com/cpastriess/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 pl-lg-5">
+                    <div class="row">
+                        <div class="col-sm-6 mb-5">
+                            <h5 class="text-white text-uppercase mb-4">Quick Links</h5>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-white-50 mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                                <a class="text-white-50 mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>About</a>
+                                <a class="text-white-50 mb-2" href="menu.html "><i class="fa fa-angle-right mr-2"></i>Menu</a>
+                                <a class="text-white-50 mb-2" href="menu.html "><i class="fa fa-angle-right mr-2"></i>Place Order</a>
+                                <a class="text-white-50" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mb-5">
+                           
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Story Section -->
-    <section class="story-section section-padding">
+    <div class="container-fluid bg-dark text-light border-top py-4" style="border-color: rgba(256, 256, 256, .15) !important;">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <div class="story-img-container">
-                        <img class="img-fluid" src="cp (6).jpg" alt="A photo representing the C Pastries story and heritage">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <span class="story-tag">Tradition Meets Excellence</span>
-                    <h2 class="pastry-section-title">A Taste of Heritage, Crafted in Toronto</h2>
-                    <p class="mb-4 text-muted">
-                        C Pastries began with a simple, heartfelt mission: to share the rich,
-                         vibrant flavors of authentic Nigerian smallchops with the Greater Toronto Area.
-                          Far from being just snacks, our pastries are a celebration of culture, family recipes,
-                           and the joy of shared moments.
-                    </p>
-                    <div class="story-content mb-4">
-                        <p class="mb-0">
-                            Every single item, from the perfectly spiced Meat Pie to the airy,
-                             golden Puff Puff, is a testament to quality. 
-                            We adhere strictly to traditional techniques while selecting only the finest,
-                             freshest ingredients. This dedication ensures an unparalleled, 
-                             luxurious tasting experience that honors our heritage.
-                        </p>
-                    </div>
-                    <a href="menu.html" class="btn btn-pastry">View Our Menu <i class="fa fa-arrow-right ml-2"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Values Section -->
-    <section class="values-section section-padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center mb-5">
-                    <span class="story-tag">Our Promise</span>
-                    <h2 class="pastry-section-title text-center">Crafting Joy, One Pastry at a Time</h2>
-                </div>
-            </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="value-card">
-                        <i class="fa fa-cookie-bite"></i>
-                        <h5>Authenticity</h5>
-                        <p class="text-muted m-0">
-                            We use cherished, time-honored African recipes to bring you genuine, unforgettable flavors.
-                        </p>
-                    </div>
+                <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                    <p class="m-0 text-white">&copy; <a href="index.html">C Pastries</a>. All Rights Reserved.</p>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="value-card">
-                        <i class="fa fa-gem"></i>
-                        <h5>Premium Quality</h5>
-                        <p class="text-muted m-0">
-                            Only the finest ingredients make it into our kitchen, ensuring a consistently superior product.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="value-card">
-                        <i class="fa fa-heartbeat"></i>
-                        <h5>Passion & Care</h5>
-                        <p class="text-muted m-0">
-                            Each pastry is baked with immense love and meticulous attention to detail by our expert team.
-                        </p>
-                    </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <p class="m-0 text-white">Place an <a href="order.html">order</a> today!</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container section-padding">
-            <div class="row">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <a href="index.html" class="d-inline-block mb-4">
-                        <h2 class="text-white">C Pastries</h2>
-                    </a>
-                    <p class="mb-4">
-                        Our goal is to help you experience authentic African flavors that reflect traditional recipes and premium ingredients. 
-                        We offer a wide range of pastries and smallchops, and our bakers stay true to traditional techniques while providing 
-                        you with top-notch service in a warm and inviting atmosphere.
-                    </p>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt mr-2"></i>60 Honeycrisp Crescent, Vaughan, ON L4K 0N5</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt mr-2"></i>+1 (289) 273-4930</p>
-                    <p class="mb-4"><i class="fa fa-envelope mr-2"></i>cspastries3@gmail.com</p>
-                    <div class="d-flex">
-                        <a class="btn-social mr-2" href="https://www.instagram.com/cpastriess/"><i class="fab fa-twitter"></i></a>
-                        <a class="btn-social mr-2" href="https://www.instagram.com/cpastriess/"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn-social" href="https://www.instagram.com/cpastriess/"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-sm-6 mb-5">
-                            <h5>Quick Links</h5>
-                            <div class="d-flex flex-column">
-                                <a class="mb-2" href="index.html">Home</a>
-                                <a class="mb-2" href="about.html">About</a>
-                                <a class="mb-2" href="menu.html">Menu</a>
-                                <a class="mb-2" href="order.html">Place Order</a>
-                                <a href="contact.html">Contact</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <h5>Business Hours</h5>
-                            <div class="d-flex flex-column">
-                                <p class="mb-1">Monday - Saturday</p>
-                                <p class="mb-3 font-weight-bold">10:00 AM - 7:00 PM</p>
-                                <p class="mb-1">Sunday</p>
-                                <p class="font-weight-bold">12:00 PM - 5:00 PM</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6 text-center text-md-left">
-                        <p class="mb-0">&copy; <a href="index.html">C Pastries</a>. All Rights Reserved.</p>
-                    </div>
-                    <div class="col-md-6 text-center text-md-right">
-                        <p class="mb-0">Place an <a href="order.html">order</a> today!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </div>
+    <!-- Footer End -->
 
     <!-- Back to Top -->
-    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -693,56 +1142,22 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    
-    <!-- Custom JavaScript -->
-    <script>
-        // Navbar scroll effect
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 100) {
-                $('.navbar').addClass('scrolled');
-            } else {
-                $('.navbar').removeClass('scrolled');
-            }
-        });
-        
-        // Back to top button
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 300) {
-                $('.back-to-top').addClass('show');
-            } else {
-                $('.back-to-top').removeClass('show');
-            }
-        });
-        
-        $('.back-to-top').click(function() {
-            $('html, body').animate({scrollTop: 0}, 800);
-            return false;
-        });
-        
-        // Animation on scroll
-        function animateOnScroll() {
-            $('.animate-fade-in-up').each(function() {
-                var position = $(this).offset().top;
-                var scrollPosition = $(window).scrollTop() + $(window).height() * 0.8;
-                
-                if (position < scrollPosition) {
-                    $(this).addClass('animate-fade-in-up');
-                }
-            });
-        }
-        
-        $(window).scroll(function() {
-            animateOnScroll();
-        });
-        
-        // Initialize on page load
-        $(document).ready(function() {
-            animateOnScroll();
-        });
-    </script>
 </body>
 
 </html>
