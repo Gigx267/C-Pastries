@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>C Pastries - Premium Toronto Smallchops</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="C Pastries, Toronto Smallchops, Nigerian Pastries, African Snacks" name="keywords">
+    <meta content="Premium Toronto smallchops crafted with authentic recipes and the finest ingredients" name="description">
+
+    <!-- Favicon -->
+    <link href="logo.jpg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!--Animate csss Libariries -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        
+        /* Additional custom styles for C Pastries */
+        .pastry-bg {
+            background-color: #f8f5f2;
+        }
+        .pastry-primary {
+            color: #ef78b3; /* Changed to pink */
+        }
+        .bg-pastry-primary {
+            background-color: #ef78b3; /* Changed to pink */
+        }
+        .border-pastry-primary {
+            border-color: #ef78b3 !important; /* Changed to pink */
+        }
+        .btn-pastry {
+            background-color: #ef78b3; /* Changed to pink */
+            border-color: #ef78b3; /* Changed to pink */
+            color: white;
+        }
+        .btn-pastry:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+            border-color: #ff1493; /* Darker pink on hover */
+            color: white;
+        }
+        .pastry-counter {
+            color: #ef78b3; /* Changed to pink */
+        }
+        .pastry-section-title {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .pastry-section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #ef78b3; /* Changed to pink */
+        }
+        .pastry-item {
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .pastry-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        
+        /* Popular Items Gallery Styles */
+        .popular-items-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        .popular-items-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #333;
+            position: relative;
+        }
+        .popular-items-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #ef78b3; /* Changed to pink */
+        }
+        .popular-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .popular-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        .popular-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .popular-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .popular-item:hover .popular-item-overlay {
+            transform: translateY(0);
+        }
+        .popular-item-name {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        .popular-item-price {
+            color: #ef78b3; /* Changed to pink */
+            font-weight: bold;
+        }
+        
+        /* Custom Order Section Styles */
+        .custom-order-section {
+            background-color: #f8f5f2;
+            padding: 40px 0;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .custom-order-text {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .whatsapp-btn {
+            background-color: #ef78b3; /* Changed to pink */
+            border-color: #ef78b3; /* Changed to pink */
+            color: white;
+            margin-right: 10px;
+        }
+        .whatsapp-btn:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+            border-color: #ff1493; /* Darker pink on hover */
+            color: white;
+        }
+        .instagram-btn {
+            background-color: #ef78b3; /* Changed to pink */
+            border-color: #ef78b3; /* Changed to pink */
+            color: white;
+        }
+        .instagram-btn:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+            border-color: #ff1493; /* Darker pink on hover */
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light d-none d-lg-block">
+        <div class="row py-2 px-lg-5">
+            <div class="col-lg-6 text-left mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center">
+                    <small><i class="fa fa-phone-alt mr-2"></i>+1 (289) 273-4930</small>
+                    <small class="px-3">|</small>
+                    <small><i class="fa fa-envelope mr-2"></i>cspastries3@gmail.com</small>
+                </div>
+            </div>
+            <div class="col-lg-6 text-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-primary px-2" href="https://www.instagram.com/cpastriess/">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-primary px-2" href="https://www.instagram.com/cpastriess/">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-primary px-2" href="https://www.instagram.com/cpastriess/">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+   <div class="container-fluid p-0">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
+        <a href="index.html" class="navbar-brand ml-lg-3 d-flex align-items-center">
+            <img style="height: 2cm; border-radius: 50%; opacity: 80%;" src="logo.jpg" alt="Bakery Logo" srcset="">
+            <span style="font-size: 1.5rem; font-weight: bold; color: #ef78b3; margin-left: 0.5rem; line-height: 1;">
+                C Pastries
+            </span>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+            <div class="navbar-nav m-auto py-0">
+                <a href="index.html" class="nav-item nav-link ">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="https://buy.stripe.com/test_7sY4gs3L12fB9xof3K4Vy02?locale=en&__embed_source=buy_btn_1SY6XP4Gg5qHjJDccCZAZwui " class="nav-item nav-link"> View Menu</a>
+                
+                <a href="contact.html" class="nav-item nav-link">Contact Us </a>
+            </div>
+            <a href="order.html" class="btn btn-primary d-none d-lg-block" style="background-color: #ef78b3; border-color: #ef78b3;">Order Now</a>
+        </div>
+    </nav>
+</div>
+   
+   
+
+
+  
+
+ 
+<style> 
+    /* --- Professional About Section Styling --- */
+
+/* 1. Overall Section & Background */
+.about-section-pro {
+    background-color: #f8f9fa; /* Light gray background for contrast */
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* 2. Video Container Styling */
+.video-column {
+    /* Ensures the video column is positioned relative to its content for safety */
+    position: relative;
+    padding: 0 15px;
+}
+
+.video-container {
+    /* Create a 16:9 aspect ratio wrapper for the video */
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+    height: 200%;
+    overflow: hidden;
+    /* Add smooth, rounded edges and a slight shadow for a pro look */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video fills the container without stretching */
+}
+
+/* 3. Content Column Enhancements */
+.content-column h1 {
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.content-column p {
+    line-height: 1.8;
+    color: #555;
+    /* Remove the old 'pl-4 border-left border-primary' if you want a cleaner look.
+       If you want to keep a subtle divider, update the border style: */
+    border-left: 3px solid #ef78b3; /* Changed to pink */
+    padding-left: 1rem;
+}
+
+/* 4. Stats Box Enhancement */
+.stat-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+    /* Optional: Add a subtle hover effect */
+}
+
+.stat-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 992px) {
+    /* On smaller screens, allow the video to take up full width 
+       and add spacing between the video and content */
+    .video-column {
+        margin-bottom: 2rem;
+    }
+
+    .video-container {
+        /* Adjust padding for a slightly shorter height on mobile */
+        padding-bottom: 65%; 
+    }
+}
+</style>
+
+     
+    <style>
+        /* ===== CSS VARIABLES - Pink & White Theme ===== */
+        :root {
+            --primary-pink: #ef78b3; /* Hot pink */
+            --primary-dark: #1a1a1a; /* Deep black for text */
+            --accent-pink: #ffb6c1; /* Light pink for highlights */
+            --light-cream: #fff5f9; /* Light pink background */
+            --medium-cream: #ffe4ec; /* Medium pink for sections */
+            --white: #ffffff;
+            --text-dark: #2c2c2c;
+            --text-light: #f8f5f2;
+            --text-muted: #7a7a7a;
+            --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.15);
+            --shadow-pink: 0 4px 15px rgba(255, 105, 180, 0.4);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+
+        /* ===== GLOBAL STYLES - Bold & Vibrant ===== */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .pastry-primary {
+            color: var(--primary-pink);
+        }
+
+        .pastry-red {
+            color: var(--primary-pink);
+        }
+
+        /* ===== BUTTONS - Bold & Eye-catching ===== */
+        .btn-pastry {
+            background-color: var(--primary-pink);
+            border: 2px solid var(--primary-pink);
+            color: var(--white);
+            font-weight: 700;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-pastry:hover {
+            background-color: transparent;
+            color: var(--primary-pink);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-pink);
+        }
+
+        .btn-outline-pastry {
+            background-color: transparent;
+            border: 2px solid var(--primary-pink);
+            color: var(--primary-pink);
+            font-weight: 700;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .btn-outline-pastry:hover {
+            background-color: var(--primary-pink);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* ===== HEADER & NAVIGATION - Simplified & Bold ===== */
+        .navbar {
+            padding: 15px 0;
+            transition: padding var(--transition), background-color var(--transition), box-shadow var(--transition);
+            box-shadow: none;
+            background-color: var(--white) !important;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(4px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .navbar-light .navbar-nav .nav-link {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            margin: 0 10px;
+        }
+        
+        .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link.active {
+            color: var(--primary-pink);
+        }
+
+        /* ===== HERO SECTION - Bold & Appetizing ===== */
+        .menu-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./bg3.webp') center/cover no-repeat;
+            color: var(--white);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .menu-hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* ===== MENU SECTION - Vibrant & Appetizing ===== */
+        .menu-section {
+            background-color: var(--light-cream);
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-pink);
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .menu-category {
+            margin-bottom: 80px;
+        }
+
+        .category-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-pink);
+            display: inline-block;
+        }
+
+        .menu-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            height: 100%;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .item-image-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .item-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-item:hover .item-image {
+            transform: scale(1.1);
+        }
+
+        .item-content {
+            padding: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .item-name {
+            font-size: 1.4rem;
+            margin-bottom: 0;
+            color: var(--primary-dark);
+            flex: 1;
+        }
+
+        .item-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-pink);
+            margin-left: 15px;
+        }
+
+        .item-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .item-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .option-tag {
+            background-color: var(--medium-cream);
+            color: var(--text-dark);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .special-item {
+            border: 3px solid var(--primary-pink);
+        }
+
+        .special-badge {
+            background-color: var(--primary-pink);
+            color: var(--white);
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            z-index: 3;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-pink);
+        }
+
+        /* ===== CART STYLES - FIXED ===== */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 380px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: var(--shadow-medium);
+            transition: right 0.3s ease;
+            z-index: 1050;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1040;
+            display: none;
+        }
+
+        .cart-overlay.show {
+            display: block;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-price {
+            color: var(--primary-pink);
+            font-weight: 700;
+        }
+
+        .cart-quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            background: var(--primary-pink);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-total {
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 20px 0;
+            color: var(--primary-dark);
+        }
+
+        /* ===== PAYMENT MODAL ===== */
+        .payment-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .payment-modal.show {
+            display: flex;
+        }
+
+        .payment-content {
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .payment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .payment-header h3 {
+            margin: 0;
+            color: var(--primary-dark);
+        }
+
+        .close-payment {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .payment-form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-pink);
+            outline: none;
+        }
+
+        .payment-summary {
+            background-color: var(--light-cream);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .payment-summary h4 {
+            margin-top: 0;
+            color: var(--primary-dark);
+        }
+
+        .payment-summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .payment-total {
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+        /* ===== CTA SECTION - Bold & Urgent ===== */
+        .cta-section {
+            background: linear-gradient(rgba(255, 105, 180, 0.9), rgba(255, 105, 180, 0.9)), url('cta-bg.jpg') center/cover no-repeat;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 2.8rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .btn-pastry {
+            background-color: var(--white);
+            border-color: var(--white);
+            color: var(--primary-pink);
+        }
+
+        .cta-section .btn-pastry:hover {
+            background-color: transparent;
+            color: var(--white);
+            border-color: var(--white);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 60px 0 30px;
+        }
+
+        .footer h5 {
+            color: var(--primary-pink);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer a {
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--primary-pink);
+            text-decoration: none;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-pink);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* ===== LOADING SPINNER ===== */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ===== RESPONSIVE ADJUSTMENTS - FIXED ===== */
+        @media (max-width: 768px) {
+            .menu-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .category-title {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-light .navbar-nav .nav-link {
+                font-size: 1rem;
+                margin: 5px 0;
+            }
+            
+            .cart-sidebar {
+                width: 320px;
+                max-width: 85vw;
+            }
+            
+            .payment-content {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cart-sidebar {
+                width: 280px;
+                max-width: 90vw;
+            }
+        }
+
+        /* ===== DELIVERY OPTIONS ===== */
+        .delivery-options {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .delivery-option {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .delivery-option.selected {
+            border-color: var(--primary-pink);
+            background-color: rgba(255, 105, 180, 0.1);
+        }
+
+        .delivery-option input {
+            display: none;
+        }
+
+        .delivery-fields {
+            display: none;
+        }
+
+        .delivery-fields.show {
+            display: block;
+        }
+
+        /* ===== SOCIAL SHARING BUTTONS ===== */
+        .social-sharing {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .whatsapp-btn {
+            background-color: var(--primary-pink);
+            color: white;
+        }
+
+        .instagram-btn {
+            background-color: var(--primary-pink);
+            color: white;
+        }
+
+        .social-btn:hover {
+            background-color: #ff1493;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    
+
+   
+
+   
+
+    <!-- Hero Section -->
+   
+
+    
+    
+  
+
+   
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <script>
+        // Cart state
+        let cart = [];
+
+        // DOM Ready
+        $(document).ready(function() {
+            initializeApp();
+        });
+
+        function initializeApp() {
+            setupEventListeners();
+            updateCartDisplay();
+        }
+
+        function setupEventListeners() {
+            // Cart toggle
+            $('#cartButton').on('click', openCart);
+            $('#closeCart').on('click', closeCart);
+            $('#cartOverlay').on('click', closeCart);
+
+            // Checkout buttons
+            $('#checkoutButton').on('click', openPaymentModal);
+            $('#ctaCheckout').on('click', openPaymentModal);
+
+            // Payment modal
+            $('#closePayment').on('click', closePaymentModal);
+            
+            // Delivery method selection
+            $('input[name="deliveryMethod"]').on('change', function() {
+                $('.delivery-option').removeClass('selected');
+                $(this).closest('.delivery-option').addClass('selected');
+                
+                if ($(this).val() === 'delivery') {
+                    $('#deliveryFields').addClass('show');
+                    $('#address').prop('required', true);
+                } else {
+                    $('#deliveryFields').removeClass('show');
+                    $('#address').prop('required', false);
+                }
+            });
+
+            // Social sharing buttons
+            $('#whatsappOrder').on('click', function(e) {
+                e.preventDefault();
+                submitOrder('whatsapp');
+            });
+            
+            $('#instagramOrder').on('click', function(e) {
+                e.preventDefault();
+                submitOrder('instagram');
+            });
+
+            // Navbar scroll effect
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            $('a[href*="#"]').on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate(
+                    {
+                        scrollTop: $($(this).attr('href')).offset().top - 70,
+                    },
+                    500,
+                    'linear'
+                );
+            });
+
+            // Add to cart buttons
+            $('.add-to-cart').on('click', function() {
+                const productId = $(this).data('product-id');
+                const productName = $(this).data('product-name');
+                const productPrice = $(this).data('product-price');
+                const priceId = $(this).data('price-id');
+                
+                addToCart(productId, productName, productPrice, priceId);
+            });
+        }
+
+        function addToCart(productId, productName, productPrice, priceId) {
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: productName,
+                    price: productPrice,
+                    priceId: priceId,
+                    quantity: 1
+                });
+            }
+            
+            updateCartDisplay();
+            showAddToCartAnimation();
+        }
+
+        function updateCartDisplay() {
+            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            $('#cartCount').text(cartCount);
+            
+            const cartItemsContainer = $('#cartItems');
+            cartItemsContainer.empty();
+            
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const cartItemHtml = `
+                    <div class="cart-item">
+                        <div class="cart-item-details">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">$${(itemTotal / 100).toFixed(2)}</div>
+                        </div>
+                        <div class="cart-quantity-controls">
+                            <button class="quantity-btn decrease-quantity" data-product-id="${item.id}">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="quantity-btn increase-quantity" data-product-id="${item.id}">+</button>
+                        </div>
+                    </div>
+                `;
+                cartItemsContainer.append(cartItemHtml);
+            });
+            
+            $('#cartTotal').text((total / 100).toFixed(2));
+            
+            // Enable/disable checkout buttons based on cart content
+            const hasItems = cart.length > 0;
+            $('#checkoutButton').prop('disabled', !hasItems);
+            $('#ctaCheckout').prop('disabled', !hasItems);
+            
+            // Add event listeners for quantity controls
+            $('.decrease-quantity').on('click', function() {
+                const productId = $(this).data('product-id');
+                updateQuantity(productId, -1);
+            });
+            
+            $('.increase-quantity').on('click', function() {
+                const productId = $(this).data('product-id');
+                updateQuantity(productId, 1);
+            });
+        }
+
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(i => i.id !== productId);
+                }
+                updateCartDisplay();
+            }
+        }
+
+        function openCart() {
+            $('#cartSidebar').addClass('open');
+            $('#cartOverlay').addClass('show');
+        }
+
+        function closeCart() {
+            $('#cartSidebar').removeClass('open');
+            $('#cartOverlay').removeClass('show');
+        }
+
+        function openPaymentModal() {
+            if (cart.length === 0) return;
+            
+            // Update payment summary
+            const paymentSummary = $('#paymentSummaryItems');
+            paymentSummary.empty();
+            
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const summaryItem = `
+                    <div class="payment-summary-item">
+                        <span>${item.name} x ${item.quantity}</span>
+                        <span>$${(itemTotal / 100).toFixed(2)}</span>
+                    </div>
+                `;
+                paymentSummary.append(summaryItem);
+            });
+            
+            $('#paymentTotal').text((total / 100).toFixed(2));
+            
+            // Show the payment modal
+            $('#paymentModal').addClass('show');
+        }
+
+        function closePaymentModal() {
+            $('#paymentModal').removeClass('show');
+        }
+
+        function showAddToCartAnimation() {
+            // Simple animation feedback
+            $('#cartCount').addClass('bounce');
+            setTimeout(() => {
+                $('#cartCount').removeClass('bounce');
+            }, 300);
+        }
+
+        function submitOrder(platform) {
+            if (cart.length === 0) return;
+            
+            // Collect form data
+            const customerInfo = {
+                name: $('#name').val(),
+                phone: $('#phone').val(),
+                deliveryMethod: $('input[name="deliveryMethod"]:checked').val(),
+                address: $('#address').val(),
+                specialRequests: $('#specialRequests').val()
+            };
+            
+            // Validate required fields
+            if (!customerInfo.name || !customerInfo.phone) {
+                alert('Please fill in all required fields: Name and Phone Number');
+                return;
+            }
+            
+            if (customerInfo.deliveryMethod === 'delivery' && !customerInfo.address) {
+                alert('Please provide a delivery address');
+                return;
+            }
+            
+            // Build order message
+            let message = `🍽️ *NEW ORDER FROM C PASTRIES WEBSITE* 🍽️%0A%0A`;
+            message += `*Customer Information:*%0A`;
+            message += `Name: ${customerInfo.name}%0A`;
+            message += `Phone: ${customerInfo.phone}%0A`;
+            message += `Delivery Method: ${customerInfo.deliveryMethod === 'delivery' ? 'Delivery' : 'Pickup'}%0A`;
+            
+            if (customerInfo.deliveryMethod === 'delivery') {
+                message += `Delivery Address: ${customerInfo.address}%0A`;
+            }
+            
+            message += `%0A*Order Details:*%0A`;
+            
+            let total = 0;
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                message += `• ${item.name} x ${item.quantity} - $${(itemTotal / 100).toFixed(2)}%0A`;
+            });
+            
+            message += `%0A*Total: $${(total / 100).toFixed(2)}*%0A`;
+            
+            if (customerInfo.specialRequests) {
+                message += `%0A*Special Requests:*%0A${customerInfo.specialRequests}%0A`;
+            }
+            
+            message += `%0A_Please confirm this order and provide estimated delivery/pickup time._`;
+            
+            // Open the appropriate platform with the order message
+            let url;
+            if (platform === 'whatsapp') {
+                url = `https://api.whatsapp.com/send/?phone=12892734930&text=${message}&type=phone_number&app_absent=0`;
+            } else if (platform === 'instagram') {
+                url = `https://www.instagram.com/direct/new/?text=${message}`;
+            }
+            
+            // Open in new tab
+            window.open(url, '_blank');
+            
+            // Optionally clear the cart after order is sent
+            // cart = [];
+            // updateCartDisplay();
+            // closePaymentModal();
+        }
+
+        // Add bounce animation to CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            .bounce {
+                animation: bounce 0.3s ease;
+            }
+            @keyframes bounce {
+                0%, 20%, 60%, 100% {transform: translateY(0);}
+                40% {transform: translateY(-10px);}
+                80% {transform: translateY(-5px);}
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
+
+
+    <section class="faq-section" id="faq">
+    <div class="container">
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to common questions about ordering, delivery, and more</p>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What types of products do you offer?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We offer a variety of fresh baked goods and small chops, including pies, pastries, Chapman, suya wings, puff puff, meat pies, and more. We also have special menu items and seasonal treats depending on availability.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you offer pickup or delivery?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We provide both pickup and delivery. Delivery is currently available within a region in the Greater Toronto Area (GTA).</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you accept bulk or catering orders?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! We handle bulk and catering orders for birthdays, weddings, corporate events, and other occasions. Please contact us on Instagram or WhatsApp to place large orders or discuss custom requests.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do your pastries contain allergens?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. Our products may contain dairy and eggs. If you have any food allergies or dietary restrictions, please contact us before placing an order.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you deliver outside the GTA?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>At the moment, we only deliver within the Greater Toronto Area (GTA). Customers outside the area are welcome to choose pickup.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How can I place an order?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>You can place your order directly through our website or we also accept orders through DoorDash.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What is your return/refund policy?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Pickup Orders:</strong> Due to the perishable nature of our products, we do not accept returns. If there is an issue with your order, please contact us within 24 hours so we can assist you.</p>
+                    <p><strong>Delivery Orders:</strong></p>
+                    <ul>
+                        <li><strong>Incorrect Address:</strong> If your order is not received due to an incorrect or incomplete address, we cannot offer a refund or replacement.</li>
+                        <li><strong>Failed Delivery Attempts:</strong> If the courier attempts delivery multiple times and the order is returned, we cannot provide a refund or replacement.</li>
+                        <li><strong>Damaged or Incorrect Orders:</strong> If your order arrives damaged or incorrect, please send us a clear photo of the issue so we can assess eligibility for a refund or replacement. Without a photo, we cannot process the claim.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How can I contact customer service?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>You can reach us through:</p>
+                    <ul>
+                        <li><strong>Email:</strong> cspastries3@gmail.com</li>
+                        <li><strong>Phone:</strong> +1 (289) 273-4930</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What is your pre-order schedule?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We accept pre-orders Monday to Thursday until 11:00 PM. All pre-orders are delivered on Saturday within the GTA. Pickup is also available on Saturdays. For bulk, customized, or catering pre-orders, or if you need an order for a different day, please contact us on Instagram or WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pre-order-info">
+            <h3>Pre-Order Information</h3>
+            <div class="pre-order-grid">
+                <div class="pre-order-item">
+                    <h4>Pre-Order Window</h4>
+                    <p>You can place your pre-order from Monday to Thursday until 11:00 PM.</p>
+                </div>
+                <div class="pre-order-item">
+                    <h4>Delivery Day</h4>
+                    <p>All pre-orders are delivered on Saturday.</p>
+                </div>
+                <div class="pre-order-item">
+                    <h4>Delivery Area</h4>
+                    <p>Saturday delivery is available within a region in the Greater Toronto Area (GTA).</p>
+                </div>
+                <div class="pre-order-item">
+                    <h4>Pickup Option</h4>
+                    <p>If you prefer, you may choose pickup on Saturday instead of delivery.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.faq-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.section-title p {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+.faq-question {
+    padding: 20px 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #f5f5f5;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.faq-toggle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #777;
+    transition: transform 0.3s;
+}
+
+.faq-answer {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer p, .faq-answer ul {
+    margin-bottom: 20px;
+}
+
+.faq-answer ul {
+    padding-left: 20px;
+}
+
+.faq-answer li {
+    margin-bottom: 8px;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 25px 25px;
+    max-height: 1000px;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.pre-order-info {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+}
+
+.pre-order-info h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+.pre-order-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.pre-order-item {
+    text-align: center;
+    padding: 20px 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s;
+}
+
+.pre-order-item:hover {
+    transform: translateY(-5px);
+}
+
+.pre-order-item h4 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.pre-order-item p {
+    color: #666;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 50px 0;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    .faq-question {
+        padding: 15px 20px;
+    }
+    
+    .faq-question h3 {
+        font-size: 1.1rem;
+    }
+    
+    .pre-order-info {
+        padding: 20px;
+    }
+    
+    .pre-order-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            // Close all other FAQ items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            item.classList.toggle('active');
+        });
+    });
+});
+</script>
+
+            <style> 
+                /* --- General Menu Section Styling --- */
+.menu-section {
+    padding: 60px 0;
+    background-color: #f8f8f8; /* Light background for the section */
+}
+
+.menu-section .container {
+    max-width: 1140px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #ef78b3; /* Changed to pink */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* --- Menu Category Styling --- */
+.menu-category {
+    margin-bottom: 40px;
+}
+
+.category-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e9e9e9;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* --- Individual Menu Item Styling --- */
+.menu-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default; /* Change cursor for visual cue */
+}
+
+/* Hover effect for a subtle lift */
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.item-image-container {
+    width: 100%;
+    height: 200px; /* Uniform height for images */
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+}
+
+.item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover .item-image {
+    transform: scale(1.05);
+}
+
+.item-content {
+    padding: 15px 20px 20px 20px;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.item-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ef78b3; /* Changed to pink */
+    margin: 0;
+}
+
+.item-price {
+    font-size: 22px;
+    font-weight: 800;
+    color: #333;
+    flex-shrink: 0; /* Prevents price from shrinking */
+    margin-left: 15px;
+}
+
+.item-description {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.item-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Space between option tags */
+}
+
+.option-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: #ffe4ec; /* Light pink background */
+    color: #ef78b3; /* Pink text */
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* --- Special Package Styling --- */
+.special-item {
+    border: 3px solid #ef78b3; /* Changed to pink */
+    position: relative;
+}
+
+.special-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #ef78b3; /* Changed to pink */
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom-left-radius: 10px;
+    z-index: 10;
+}
+
+.special-item .item-name {
+    color: #333; /* Use default color for special item name */
+}
+
+.special-item .item-price {
+    color: #ef78b3; /* Use pink color for special item price */
+    font-size: 26px; /* Larger price for emphasis */
+}
+
+/* Adjust image container height for special item on large screens */
+@media (min-width: 992px) {
+    .special-item .item-image-container {
+        height: 250px;
+    }
+}
+            </style>
+            <script> 
+document.addEventListener('DOMContentLoaded', () => {
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    // Add event listeners to each menu item
+    menuItems.forEach(item => {
+        // Event for when the mouse pointer enters the item
+        item.addEventListener('mouseenter', (event) => {
+            // Add an 'is-hovering' class for a custom CSS effect if needed
+            item.classList.add('is-hovering');
+
+            // Find the item name element within the hovered item
+            const itemNameElement = item.querySelector('.item-name');
+            const itemName = itemNameElement ? itemNameElement.textContent : 'Unknown Item';
+            
+            // Log the item name to the console (for demonstration/analytics)
+            console.log(`User is hovering over: ${itemName}`);
+        });
+
+        // Event for when the mouse pointer leaves the item
+        item.addEventListener('mouseleave', (event) => {
+            // Remove the 'is-hovering' class
+            item.classList.remove('is-hovering');
+        });
+    });
+});
+
+            </script>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2>Ready to Taste C pastries?</h2>
+                    <p>Place your order  and experience the rich 
+                         freshly made with traditional recipes and premium ingredients.</p>
+                    <a href="order.html" class="btn btn-pastry btn-lg">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Start -->
+    <div class="footer container-fluid position-relative bg-dark py-5" style="margin-top: 90px;">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-lg-6 pr-lg-5 mb-5">
+                    <a href="index.html" class="navbar-brand">
+                        <h1 class="mb-3 text-white"><span class="text-primary"></span>C Pastries</h1>
+                    </a>
+                    <p>
+                        Our goal is to help you experience authentic African flavors that reflect traditional recipes and premium ingredients. 
+                        We offer a wide range of pastries and smallchops, and our bakers stay true to traditional techniques while providing 
+                        you with top-notch service in a warm and inviting atmosphere.
+                    </p>
+                    <p><i class="fa fa-phone-alt mr-2"></i>+1 (289) 273-4930</p>
+                    <p><i class="fa fa-envelope mr-2"></i>cspastries3@gmail.com</p>
+                    <div class="d-flex justify-content-start mt-4">
+                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="https://www.instagram.com/cpastriess/ "><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="https://www.instagram.com/cpastriess/ "><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square" href="https://www.instagram.com/cpastriess/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 pl-lg-5">
+                    <div class="row">
+                        <div class="col-sm-6 mb-5">
+                            <h5 class="text-white text-uppercase mb-4">Quick Links</h5>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-white-50 mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                                <a class="text-white-50 mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>About</a>
+                                <a class="text-white-50 mb-2" href="https://buy.stripe.com/test_7sY4gs3L12fB9xof3K4Vy02?locale=en&__embed_source=buy_btn_1SY6XP4Gg5qHjJDccCZAZwui"><i class="fa fa-angle-right mr-2"></i>Menu</a>
+                                <a class="text-white-50 mb-2" href="https://buy.stripe.com/test_7sY4gs3L12fB9xof3K4Vy02?locale=en&__embed_source=buy_btn_1SY6XP4Gg5qHjJDccCZAZwui "><i class="fa fa-angle-right mr-2"></i>Place Order</a>
+                                <a class="text-white-50" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mb-5">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-light border-top py-4" style="border-color: rgba(256, 256, 256, .15) !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                    <p class="m-0 text-white">&copy; <a href="index.html">C Pastries</a>. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <p class="m-0 text-white">Place an <a href="order.html">order</a> today!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
